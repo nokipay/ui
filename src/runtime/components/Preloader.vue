@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { getImageUrl } from '../assets/images';
+
 const preloaderRef = ref();
 
 onMounted(() => {
@@ -24,7 +26,7 @@ onMounted(() => {
         class="fixed top-0 left-0 z-[9999] flex items-center justify-center w-full h-screen transition-opacity duration-200 preloader bg-gray-900">
         <div class="flex flex-col items-center">
             <div class="mb-8">
-                <img src="@@/app/base/assets/img/logo.png" alt="NokiPay" class="w-32 h-32 animate-pulse" />
+                <img :src="getImageUrl('logo')" alt="NokiPay" class="w-32 h-32 animate-pulse" />
             </div>
             <div class="loader-container">
                 <div class="loader">

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { t } = useTranslations();
-
 const props = defineProps({
   searchQuery: { type: String, default: '' },
   page: { type: Number, default: 1 },

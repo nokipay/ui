@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const appStore = useAppStore()
+// const appStore = useAppStore()
 
-const toast = useToast()
+// const toast = useToast()
 
 const timer = ref(0)
 
@@ -18,47 +18,33 @@ function update(value: string) {
 }
 
 async function init() {
-    if (!appStore.initData) {
-        const stores = [
-            { store: useTypeFeesStore(), label: 'Type de frais' },
-            { store: useFeesStore(), label: 'Frais' },
-            { store: usePalierFeesStore(), label: 'Paliers des frais' },
-            { store: useAccountCategoryStore(), label: 'Catégories de compte' },
-            { store: useClasseServiceStore(), label: 'Classes de services' },
-            { store: useManagementStore(), label: 'Permissions' },
-            { store: useMerchantCategoryStore(), label: 'Catégories de marchand' },
-            { store: usePaysStore(), label: 'Pays' },
-            { store: useAuthorizedChannelStore(), label: 'Canaux autorisés' },
-            { store: useTypeTransactionStore(), label: 'Types de transaction' },
-            { store: usePermissionStore(), label: 'Autorisations de transaction' },
-            { store: useTransactionChannelStore(), label: 'Canaux de transaction' },
-            { store: useTransactionCommissionStore(), label: 'Commissions de transaction' },
-            { store: useTransactionLimitsStore(), label: 'Limites de transaction' },
-            { store: useTransactionLimitsStore(), label: 'Limites de transaction' },
-        ];
+    // if (!appStore.initData) {
+    //     const stores = [
+    //         // { store: useTypeFeesStore(), label: 'Type de frais' },
+    //     ];
 
-        for (const { store, label } of stores) {
-            try {
-                await store.findAll();
+    //     for (const { store, label } of stores) {
+    //         try {
+    //             await store.findAll();
 
-                update(label);
-            } catch (error: any) {
-                if (error.response?.status === 403) {
-                    update(label);
-                }
-            }
-        }
+    //             update(label);
+    //         } catch (error: any) {
+    //             if (error.response?.status === 403) {
+    //                 update(label);
+    //             }
+    //         }
+    //     }
 
-        // try {
-        //     await useRoleStore().all();
+    //     // try {
+    //     //     await useRoleStore().all();
 
-        //     update('Rôles');
-        // } catch (error: any) {
-        //     if (error.response?.status === 403) {
-        //         update('Rôles');
-        //     }
-        // }
-    }
+    //     //     update('Rôles');
+    //     // } catch (error: any) {
+    //     //     if (error.response?.status === 403) {
+    //     //         update('Rôles');
+    //     //     }
+    //     // }
+    // }
 }
 
 onMounted(() => {
@@ -67,9 +53,9 @@ onMounted(() => {
 
 watch(timer, () => {
     if (timer.value > 100) {
-        appStore.initData = true
+        // appStore.initData = true
 
-        toast.add({ title: 'Chargement des données effectués avec succès', icon: "i-heroicons-check-circle" })
+        // toast.add({ title: 'Chargement des données effectués avec succès', icon: "i-heroicons-check-circle" })
 
         timer.value = 0
     }

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { t } = useTranslations();
-
 interface PaginationInfoAttributes {
     page: number;
     pageCount: number;
@@ -14,13 +12,13 @@ defineProps<PaginationInfoAttributes>();
 <template>
     <div>
         <span class="text-xs text-gray-600 font-medium">
-            {{ t('table.showing') }}
+            Affiche
             <span class="font-bold text-gray-800">{{ length === 0
                 ? "0"
                 : (page - 1) * pageCount + 1 }}</span>
-            {{ t('table.to') }}
+            à
             <span class="font-bold text-gray-800">{{ Math.min(page * pageCount, Number(length)) }}</span>
-            {{ t('table.of') }}
+            sur
             <span class="font-bold text-gray-800">{{ length }}</span>
             {{ title }}
         </span>

@@ -8,12 +8,15 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'uiLibrary'
   },
   defaults: {},
-  setup (options, nuxt) {
+  async setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    // Install Nuxt UI as dependency
+    await installModule('@nuxt/ui')
 
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
-      pathPrefix: false,
+      pathPrefix: true,
       prefix: 'Noki',
       global: true
     })
