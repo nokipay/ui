@@ -42,7 +42,7 @@ function updatePageCount(val: number) {
               :model-value="props.searchQuery"
               @update:modelValue="updateSearchQuery"
               icon="i-heroicons-magnifying-glass"
-              :placeholder="props.searchPlaceholder"
+              :placeholder="props.searchPlaceholder || t('table.search')"
               size="md"
             />
           </div>

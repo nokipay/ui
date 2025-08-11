@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import { computed } from 'vue';
 import { useCurrencyFormat } from '../../composables/useCurrencyFormat';
 
 interface CardProps {

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, watch, onUnmounted } from 'vue';
-
 interface Props {
   acceptFormats?: string[]
   maxSize?: number // en Ko
