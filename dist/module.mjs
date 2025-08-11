@@ -1,12 +1,22 @@
-import jiti from "file:///Users/mackbook/dev/ui/node_modules/unbuild/node_modules/jiti/lib/index.js";
+import { defineNuxtModule, createResolver, installModule, addComponentsDir, addPlugin } from '@nuxt/kit';
 
-/** @type {import("/Users/mackbook/dev/ui/src/module")} */
-const _module = jiti(null, {
-  "esmResolve": true,
-  "interopDefault": true,
-  "alias": {
-    "@nokipay/ui": "/Users/mackbook/dev/ui"
+const module = defineNuxtModule({
+  meta: {
+    name: "@nokipay/ui",
+    configKey: "uiLibrary"
+  },
+  defaults: {},
+  async setup(options, nuxt) {
+    const resolver = createResolver(import.meta.url);
+    await installModule("@nuxt/ui");
+    addComponentsDir({
+      path: resolver.resolve("./runtime/components"),
+      pathPrefix: true,
+      prefix: "Noki",
+      global: true
+    });
+    addPlugin(resolver.resolve("./runtime/plugin"));
   }
-})("/Users/mackbook/dev/ui/src/module.ts");
+});
 
-export default _module;
+export { module as default };
