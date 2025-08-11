@@ -1,7 +1,13 @@
-import type { NuxtModule } from '@nuxt/schema'
+import type { ModuleHooks, ModuleRuntimeHooks, ModuleRuntimeConfig, ModulePublicRuntimeConfig } from './module.js'
 
-import type { default as Module } from './module.js'
+declare module '#app' {
+  interface RuntimeNuxtHooks extends ModuleRuntimeHooks {}
+}
 
-export type ModuleOptions = typeof Module extends NuxtModule<infer O> ? Partial<O> : Record<string, any>
+declare module '@nuxt/schema' {
+  interface NuxtHooks extends ModuleHooks {}
+  interface RuntimeConfig extends ModuleRuntimeConfig {}
+  interface PublicRuntimeConfig extends ModulePublicRuntimeConfig {}
+}
 
-export { default } from './module.js'
+export * from "./module.js"
