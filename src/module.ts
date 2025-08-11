@@ -4,7 +4,7 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-ui-library',
+    name: '@nokipay/ui',
     configKey: 'uiLibrary'
   },
   defaults: {},
@@ -14,7 +14,7 @@ export default defineNuxtModule<ModuleOptions>({
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
       pathPrefix: false,
-      prefix: '',
+      prefix: 'Noki',
       global: true
     })
 
