@@ -1,22 +1,18 @@
-import { defineNuxtModule, createResolver, installModule, addComponentsDir, addPlugin } from '@nuxt/kit';
+import { createJiti } from "C:/Users/hp/Documents/Present/Nokipay/ui/node_modules/jiti/lib/jiti.mjs";
 
-const module = defineNuxtModule({
-  meta: {
-    name: "@nokipay/ui",
-    configKey: "uiLibrary"
+const jiti = createJiti(import.meta.url, {
+  "interopDefault": true,
+  "alias": {
+    "@nokipay/ui": "C:/Users/hp/Documents/Present/Nokipay/ui"
   },
-  defaults: {},
-  async setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url);
-    await installModule("@nuxt/ui");
-    addComponentsDir({
-      path: resolver.resolve("./runtime/components"),
-      pathPrefix: true,
-      prefix: "Noki",
-      global: true
-    });
-    addPlugin(resolver.resolve("./runtime/plugin"));
+  "transformOptions": {
+    "babel": {
+      "plugins": []
+    }
   }
-});
+})
 
-export { module as default };
+/** @type {import("C:/Users/hp/Documents/Present/Nokipay/ui/src/module.js")} */
+const _module = await jiti.import("C:/Users/hp/Documents/Present/Nokipay/ui/src/module.ts");
+
+export default _module?.default ?? _module;
