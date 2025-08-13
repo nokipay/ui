@@ -6,5 +6,6 @@ export default defineBuildConfig({
   ],
   externals: [
     '@nuxt/kit'
-  ]
+  ],
+    failOnWarn: false
 })
