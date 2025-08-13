@@ -3,47 +3,7 @@
     <div class="max-w-4xl mx-auto space-y-8">
       <h1 class="text-4xl font-bold text-gray-900 mb-8">NokiPay UI Library Playground</h1>
 
-      <!-- Button Component -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-2xl font-semibold mb-4">Button Component</h2>
 
-        <div class="space-y-6">
-          <div>
-            <h3 class="text-lg font-medium text-gray-700 mb-3">Colors & Shadow Types</h3>
-            <div class="grid grid-cols-2 gap-6">
-              <div>
-                <h4 class="text-sm font-medium text-gray-600 mb-2">Dark Shadow</h4>
-                <div class="flex flex-wrap gap-3">
-                  <NokiButton label="Primary" color="primary" shadow-type="dark" :on-click="handleClick" />
-                  <NokiButton label="Yellow" color="yellow" shadow-type="dark" :on-click="handleClick" />
-                  <NokiButton label="Black" color="black" shadow-type="dark" :on-click="handleClick" />
-                  <NokiButton label="White" color="white" shadow-type="dark" :on-click="handleClick" />
-                </div>
-              </div>
-              <div>
-                <h4 class="text-sm font-medium text-gray-600 mb-2">Soft Shadow</h4>
-                <div class="flex flex-wrap gap-3">
-                  <NokiButton label="Primary" color="primary" shadow-type="soft" :on-click="handleClick" />
-                  <NokiButton label="Yellow" color="yellow" shadow-type="soft" :on-click="handleClick" />
-                  <NokiButton label="Black" color="black" shadow-type="soft" :on-click="handleClick" />
-                  <NokiButton label="White" color="white" shadow-type="soft" :on-click="handleClick" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-lg font-medium text-gray-700 mb-3">Sizes & States</h3>
-            <div class="flex flex-wrap items-center gap-4">
-              <NokiButton label="Small" size="sm" :on-click="handleClick" />
-              <NokiButton label="Medium" size="md" :on-click="handleClick" />
-              <NokiButton label="Large" size="lg" :on-click="handleClick" />
-              <NokiButton label="Loading..." :loading="true" />
-              <NokiButton label="With Icon" icon="heroicons:star" :on-click="handleClick" />
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Card Component -->
       <div class="bg-white rounded-lg shadow p-6">
@@ -211,7 +171,7 @@
                 subtitleSize="md"
                 icon="heroicons:document-text"
               />
-              
+
               <!-- Titre moyen -->
               <NokiHeader
                 title="Titre moyen (lg)"
@@ -220,7 +180,7 @@
                 subtitleSize="lg"
                 icon="heroicons:document-text"
               />
-              
+
               <!-- Titre très grand -->
               <NokiHeader
                 title="Titre très grand (4xl)"
@@ -297,9 +257,43 @@
           <div>
             <h3 class="text-lg font-medium text-gray-700 mb-3">Différents variants</h3>
             <div class="flex flex-wrap gap-4">
-              <NokiBadge status="active" variant="solid" />
-              <NokiBadge status="inactive" variant="soft" />
-              <NokiBadge status="pending" variant="outline" />
+              <NokiBadge status="pending" variant="solid" />
+              <NokiBadge status="completed" variant="soft" />
+              <NokiBadge status="failed" variant="outline" />
+            </div>
+          </div>
+
+          <!-- Labels personnalisés -->
+          <div>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Labels personnalisés</h3>
+            <div class="flex flex-wrap gap-4">
+              <NokiBadge label="Personnalisé" customSize="text-lg px-4 py-2 font-bold" />
+              <NokiBadge label="Important" customSize="text-xl px-6 py-3 font-semibold" />
+              <NokiBadge label="Note" customSize="text-sm px-3 py-1 italic" />
+            </div>
+          </div>
+
+          <!-- Couleurs automatiques par statut -->
+          <div>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Couleurs automatiques par statut (bords arrondis)</h3>
+            <div class="flex flex-wrap gap-4">
+              <NokiBadge status="success" />
+              <NokiBadge status="pending" />
+              <NokiBadge status="failed" />
+              <NokiBadge status="inactive" />
+              <NokiBadge status="custom_status" />
+            </div>
+            <p class="text-sm text-gray-500 mt-2">Tous les badges ont maintenant des bords arrondis pour un design moderne</p>
+          </div>
+
+          <!-- Types de gestion des booléens -->
+          <div>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Types de gestion des booléens</h3>
+            <div class="flex flex-wrap gap-4">
+              <NokiBadge :status="true" type="yesno" />
+              <NokiBadge :status="false" type="yesno" />
+              <NokiBadge :status="true" type="activeinactive" />
+              <NokiBadge :status="false" type="activeinactive" />
             </div>
           </div>
 
@@ -326,10 +320,6 @@
 import { ref } from 'vue';
 
 const showPreloader = ref(false)
-
-const handleClick = (event: MouseEvent) => {
-  console.log('Button clicked!', event)
-}
 
 const simulateOffline = () => {
   // Simulation basique - dans un vrai projet, vous pourriez modifier navigator.onLine

@@ -110,3 +110,84 @@ npm run test
 #### Events
 
 - `click`: Émis lors du clic sur le bouton
+
+### Badge (NokiBadge)
+
+```vue
+<template>
+  <!-- Badge avec statut automatique -->
+  <NokiBadge 
+    status="active" 
+    size="md" 
+    variant="soft" 
+  />
+  
+  <!-- Badge avec label personnalisé -->
+  <NokiBadge 
+    label="Personnalisé" 
+    customSize="text-lg px-4 py-2 font-bold" 
+  />
+  
+  <!-- Badge avec type spécifique -->
+  <NokiBadge 
+    :status="true" 
+    type="activeinactive" 
+  />
+</template>
+```
+
+#### Props
+
+- `status`: Statut à afficher (string, number, boolean, null, undefined)
+- `size`: Taille prédéfinie ('sm', 'md', 'lg') - défaut: 'md'
+- `variant`: Style du badge ('solid', 'soft', 'outline') - défaut: 'soft'
+- `className`: Classes CSS personnalisées
+- `type`: Type de gestion des booléens ('yesno', 'activeinactive') - défaut: 'yesno'
+- `label`: Texte personnalisé (priorité sur le statut automatique)
+- `customSize`: Classes CSS personnalisées pour la taille (priorité sur size)
+- `showStatus`: Afficher le statut ou seulement le label (boolean) - défaut: true
+
+#### Types de gestion des booléens
+
+**Type `'yesno'` (défaut):**
+- `true` / `1` → "Oui" (vert)
+- `false` / `0` → "Non" (gris)
+
+**Type `'activeinactive':**
+- `true` / `1` → "Activé" (vert)
+- `false` / `0` → "Désactivé" (gris)
+
+#### Couleurs par type de statut
+
+Le composant utilise un système de couleurs basé sur le type de statut :
+
+- **🟢 Vert (succès)**: `success`, `active`, `approved`, `paid`, `online`, `completed`, `true`, `1`
+- **🟡 Jaune (attente)**: `pending`, `unpaid`
+- **🔴 Rouge (erreur)**: `failed`, `rejected`
+- **⚫ Gris (neutre)**: `inactive`, `cancelled`, `offline`, `false`, `0`
+- **🔵 Bleu (défaut)**: Tous les autres statuts
+
+**Note**: Le texte affiché est toujours la valeur du statut fournie, seules les couleurs sont automatiquement appliquées. Tous les badges ont des bords arrondis (`rounded-full`) pour un design moderne.
+
+#### Exemples d'utilisation
+
+```vue
+<!-- Badge simple -->
+<NokiBadge status="pending" />
+
+<!-- Badge avec taille et style personnalisés -->
+<NokiBadge 
+  status="completed" 
+  size="lg" 
+  variant="outline" 
+/>
+
+<!-- Badge avec label personnalisé -->
+<NokiBadge 
+  label="Important" 
+  customSize="text-xl px-6 py-3 font-bold bg-red-100 text-red-800" 
+/>
+
+<!-- Badge de statut booléen -->
+<NokiBadge :status="true" type="activeinactive" />
+```
