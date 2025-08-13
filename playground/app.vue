@@ -10,34 +10,13 @@
         <h2 class="text-2xl font-semibold mb-4">Card Component</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <NokiCard
-            title="Total Revenue"
-            :number="15750000"
-            icon="heroicons:currency-dollar"
-            currency="FCFA"
-            accent-color="primary"
-          />
-          <NokiCard
-            title="Active Users"
-            :number="2847"
-            icon="heroicons:users"
-            currency="USD"
-            accent-color="success"
-            :show-compact="false"
-          />
-          <NokiCard
-            title="Pending Orders"
-            :number="156"
-            icon="heroicons:clock"
-            accent-color="warning"
-            :show-compact="false"
-          />
-          <NokiCard
-            title="Big Number Test"
-            :number="123456789012"
-            icon="heroicons:chart-bar"
-            accent-color="danger"
-          />
+          <NokiCard title="Total Revenue" :number="15750000" icon="heroicons:currency-dollar" currency="FCFA"
+            accent-color="primary" />
+          <NokiCard title="Active Users" :number="2847" icon="heroicons:users" currency="USD" accent-color="success"
+            :show-compact="false" />
+          <NokiCard title="Pending Orders" :number="156" icon="heroicons:clock" accent-color="warning"
+            :show-compact="false" />
+          <NokiCard title="Big Number Test" :number="123456789012" icon="heroicons:chart-bar" accent-color="danger" />
         </div>
       </div>
 
@@ -45,10 +24,8 @@
       <div class="bg-white rounded-lg shadow p-6">
         <h2 class="text-2xl font-semibold mb-4">Preloader Component</h2>
         <div class="flex gap-4">
-          <button
-            @click="showPreloader = !showPreloader"
-            class="px-4 py-2 bg-primary text-gray-900 rounded hover:bg-yellow-500 transition-colors"
-          >
+          <button @click="showPreloader = !showPreloader"
+            class="px-4 py-2 bg-primary text-gray-900 rounded hover:bg-yellow-500 transition-colors">
             {{ showPreloader ? 'Hide' : 'Show' }} Preloader
           </button>
         </div>
@@ -62,10 +39,8 @@
       <div class="bg-white rounded-lg shadow p-6">
         <h2 class="text-2xl font-semibold mb-4">Network Status Component</h2>
         <p class="text-gray-600 mb-4">Ce composant s'affiche automatiquement quand vous êtes hors connexion.</p>
-        <button
-          @click="simulateOffline"
-          class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-        >
+        <button @click="simulateOffline"
+          class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors">
           Simuler mode hors ligne
         </button>
       </div>
@@ -110,43 +85,27 @@
           <!-- Header simple -->
           <div>
             <h3 class="text-lg font-medium text-gray-700 mb-3">Header simple</h3>
-            <NokiHeader
-              title="Titre de la page"
-              subtitle="Sous-titre optionnel"
-              icon="heroicons:home"
-            />
+            <NokiHeader title="Titre de la page" subtitle="Sous-titre optionnel" icon="heroicons:home" />
           </div>
 
           <!-- Header avec badge -->
           <div>
             <h3 class="text-lg font-medium text-gray-700 mb-3">Header avec badge</h3>
-            <NokiHeader
-              title="Page avec badge"
-              subtitle="Exemple de badge simple"
-              icon="heroicons:star"
-              :badge="{ label: 'Nouveau', class: 'bg-blue-100 text-blue-800' }"
-            />
+            <NokiHeader title="Page avec badge" subtitle="Exemple de badge simple" icon="heroicons:star"
+              :badge="{ label: 'Nouveau', class: 'bg-blue-100 text-blue-800' }" />
           </div>
 
           <!-- Header avec statusBadge -->
           <div>
             <h3 class="text-lg font-medium text-gray-700 mb-3">Header avec statusBadge</h3>
-            <NokiHeader
-              title="Page avec statut"
-              subtitle="Exemple de badge de statut"
-              icon="heroicons:check-circle"
-              :statusBadge="{ status: 'active', size: 'lg' }"
-            />
+            <NokiHeader title="Page avec statut" subtitle="Exemple de badge de statut" icon="heroicons:check-circle"
+              :statusBadge="{ status: 'active', size: 'lg' }" />
           </div>
 
           <!-- Header avec slots -->
           <div>
             <h3 class="text-lg font-medium text-gray-700 mb-3">Header avec slots personnalisés</h3>
-            <NokiHeader
-              title="Page avec actions"
-              subtitle="Exemple d'utilisation des slots"
-              icon="heroicons:cog"
-            >
+            <NokiHeader title="Page avec actions" subtitle="Exemple d'utilisation des slots" icon="heroicons:cog">
               <template #left>
                 <NokiButton label="Retour" color="white" icon="heroicons:arrow-left" />
               </template>
@@ -164,31 +123,16 @@
             <h3 class="text-lg font-medium text-gray-700 mb-3">Header avec tailles personnalisées</h3>
             <div class="space-y-4">
               <!-- Titre petit -->
-              <NokiHeader
-                title="Titre petit (xs)"
-                subtitle="Sous-titre moyen (md)"
-                titleSize="xs"
-                subtitleSize="md"
-                icon="heroicons:document-text"
-              />
+              <NokiHeader title="Titre petit (xs)" subtitle="Sous-titre moyen (md)" titleSize="xs" subtitleSize="md"
+                icon="heroicons:document-text" />
 
               <!-- Titre moyen -->
-              <NokiHeader
-                title="Titre moyen (lg)"
-                subtitle="Sous-titre grand (lg)"
-                titleSize="lg"
-                subtitleSize="lg"
-                icon="heroicons:document-text"
-              />
+              <NokiHeader title="Titre moyen (lg)" subtitle="Sous-titre grand (lg)" titleSize="lg" subtitleSize="lg"
+                icon="heroicons:document-text" />
 
               <!-- Titre très grand -->
-              <NokiHeader
-                title="Titre très grand (4xl)"
-                subtitle="Sous-titre extra grand (xl)"
-                titleSize="4xl"
-                subtitleSize="xl"
-                icon="heroicons:document-text"
-              />
+              <NokiHeader title="Titre très grand (4xl)" subtitle="Sous-titre extra grand (xl)" titleSize="4xl"
+                subtitleSize="xl" icon="heroicons:document-text" />
             </div>
           </div>
         </div>
@@ -283,30 +227,63 @@
               <NokiBadge status="inactive" />
               <NokiBadge status="custom_status" />
             </div>
-            <p class="text-sm text-gray-500 mt-2">Tous les badges ont maintenant des bords arrondis pour un design moderne</p>
+            <p class="text-sm text-gray-500 mt-2">Tous les badges ont maintenant des bords arrondis pour un design
+              moderne</p>
           </div>
 
-          <!-- Types de gestion des booléens -->
+          <!-- Badges avec statuts -->
           <div>
-            <h3 class="text-lg font-medium text-gray-700 mb-3">Types de gestion des booléens</h3>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Badges avec statuts</h3>
             <div class="flex flex-wrap gap-4">
-              <NokiBadge :status="true" type="yesno" />
-              <NokiBadge :status="false" type="yesno" />
-              <NokiBadge :status="true" type="activeinactive" />
-              <NokiBadge :status="false" type="activeinactive" />
+              <NokiBadge :status="true" label="Actif" color="success" />
+              <NokiBadge :status="false" label="Inactif" color="gray" />
+              <NokiBadge status="pending" label="En attente" color="warning" />
+            </div>
+            <p class="text-sm text-gray-500 mt-2">Les labels sont maintenant obligatoires pour un affichage optimal</p>
+          </div>
+
+          <!-- Nouvelles fonctionnalités : Couleurs personnalisées -->
+          <div>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Couleurs personnalisées</h3>
+            <div class="flex flex-wrap gap-4">
+              <NokiBadge label="Succès" color="success" />
+              <NokiBadge label="Attention" color="warning" />
+              <NokiBadge label="Erreur" color="error" />
+              <NokiBadge label="Info" color="info" />
+              <NokiBadge label="Violet" color="violet" />
+              <NokiBadge label="Orange" color="orange" />
+              <NokiBadge label="Teal" color="teal" />
             </div>
           </div>
 
-          <!-- Type activeinactive -->
+          <!-- Nouvelles fonctionnalités : Poids de police -->
           <div>
-            <h3 class="text-lg font-medium text-gray-700 mb-3">Type activeinactive</h3>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Poids de police</h3>
             <div class="flex flex-wrap gap-4">
-              <NokiBadge status="true" type="activeinactive" />
-              <NokiBadge status="false" type="activeinactive" />
-              <NokiBadge status="1" type="activeinactive" />
-              <NokiBadge status="0" type="activeinactive" />
+              <NokiBadge label="Normal" fontWeight="normal" />
+              <NokiBadge label="Medium" fontWeight="medium" />
+              <NokiBadge label="Semibold" fontWeight="semibold" />
+              <NokiBadge label="Bold" fontWeight="bold" />
+              <NokiBadge label="Italic" fontWeight="italic" />
             </div>
           </div>
+
+          <!-- Combinaisons avancées -->
+          <div>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Combinaisons avancées</h3>
+            <div class="flex flex-wrap gap-4">
+              <NokiBadge label="Premium" color="purple" fontWeight="bold" size="lg" />
+              <NokiBadge label="Urgent" color="red" fontWeight="semibold" size="sm" />
+              <NokiBadge label="Nouveau" color="green" fontWeight="medium" />
+              <NokiBadge label="Beta" color="indigo" fontWeight="italic" />
+            </div>
+          </div>
+
+          <!-- Badge basique -->
+          <NokiBadge label="Nouveau" />
+
+          <!-- Badge avec couleur personnalisée -->
+          <NokiBadge label="Personnalisé" color="purple" fontWeight="bold" />
         </div>
       </div>
     </div>

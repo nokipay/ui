@@ -138,24 +138,34 @@ npm run test
 
 #### Props
 
-- `status`: Statut à afficher (string, number, boolean, null, undefined)
+- `status`: Statut optionnel à afficher (string, number, boolean, null, undefined)
 - `size`: Taille prédéfinie ('sm', 'md', 'lg') - défaut: 'md'
 - `variant`: Style du badge ('solid', 'soft', 'outline') - défaut: 'soft'
 - `className`: Classes CSS personnalisées
-- `type`: Type de gestion des booléens ('yesno', 'activeinactive') - défaut: 'yesno'
-- `label`: Texte personnalisé (priorité sur le statut automatique)
+- `label`: Texte personnalisé (recommandé pour un affichage optimal)
 - `customSize`: Classes CSS personnalisées pour la taille (priorité sur size)
-- `showStatus`: Afficher le statut ou seulement le label (boolean) - défaut: true
+- `color`: Couleur personnalisée ('success', 'warning', 'error', 'info', 'default', 'purple', 'pink', 'orange', 'teal', 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'violet') - défaut: 'default'
+- `fontWeight`: Poids de la police ('normal', 'medium', 'semibold', 'bold', 'italic') - défaut: 'medium'
 
-#### Types de gestion des booléens
+#### Utilisation Simplifiée
 
-**Type `'yesno'` (défaut):**
-- `true` / `1` → "Oui" (vert)
-- `false` / `0` → "Non" (gris)
+Le composant `NokiBadge` est maintenant simplifié et plus flexible. Il n'y a plus de logique complexe de gestion des types booléens. À la place, vous contrôlez directement l'apparence via les props :
 
-**Type `'activeinactive':**
-- `true` / `1` → "Activé" (vert)
-- `false` / `0` → "Désactivé" (gris)
+```vue
+<!-- Badge simple avec label et couleur -->
+<NokiBadge 
+  label="Actif" 
+  color="success" 
+/>
+
+<!-- Badge avec statut et label personnalisé -->
+<NokiBadge 
+  :status="true" 
+  label="Utilisateur connecté" 
+  color="green" 
+  fontWeight="bold" 
+/>
+```
 
 #### Couleurs par type de statut
 
@@ -167,7 +177,11 @@ Le composant utilise un système de couleurs basé sur le type de statut :
 - **⚫ Gris (neutre)**: `inactive`, `cancelled`, `offline`, `false`, `0`
 - **🔵 Bleu (défaut)**: Tous les autres statuts
 
-**Note**: Le texte affiché est toujours la valeur du statut fournie, seules les couleurs sont automatiquement appliquées. Tous les badges ont des bords arrondis (`rounded-full`) pour un design moderne.
+**Note**: 
+- Tous les badges ont des bords arrondis (`rounded-full`) pour un design moderne
+- Les couleurs sont contrôlées via la prop `color`
+- Les labels sont recommandés pour un affichage optimal
+- Le composant est maintenant plus simple et plus flexible
 
 #### Exemples d'utilisation
 
@@ -188,6 +202,32 @@ Le composant utilise un système de couleurs basé sur le type de statut :
   customSize="text-xl px-6 py-3 font-bold bg-red-100 text-red-800" 
 />
 
-<!-- Badge de statut booléen -->
-<NokiBadge :status="true" type="activeinactive" />
+<!-- Badge avec couleur personnalisée -->
+<NokiBadge 
+  label="Premium" 
+  color="purple" 
+  fontWeight="bold" 
+/>
+
+<!-- Badge avec poids de police personnalisé -->
+<NokiBadge 
+  label="Urgent" 
+  color="red" 
+  fontWeight="semibold" 
+  size="lg" 
+/>
+
+<!-- Badge de statut booléen avec label traduit -->
+<NokiBadge 
+  :status="true" 
+  type="activeinactive" 
+  :label="t('status.active')" 
+/>
+
+<!-- Badge yesno avec label traduit -->
+<NokiBadge 
+  :status="false" 
+  type="yesno" 
+  :label="t('status.no')" 
+/>
 ```
