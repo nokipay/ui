@@ -198,6 +198,39 @@
               </template>
             </NokiHeader>
           </div>
+
+          <!-- Header avec tailles personnalisées -->
+          <div>
+            <h3 class="text-lg font-medium text-gray-700 mb-3">Header avec tailles personnalisées</h3>
+            <div class="space-y-4">
+              <!-- Titre petit -->
+              <NokiHeader
+                title="Titre petit (xs)"
+                subtitle="Sous-titre moyen (md)"
+                titleSize="xs"
+                subtitleSize="md"
+                icon="heroicons:document-text"
+              />
+              
+              <!-- Titre moyen -->
+              <NokiHeader
+                title="Titre moyen (lg)"
+                subtitle="Sous-titre grand (lg)"
+                titleSize="lg"
+                subtitleSize="lg"
+                icon="heroicons:document-text"
+              />
+              
+              <!-- Titre très grand -->
+              <NokiHeader
+                title="Titre très grand (4xl)"
+                subtitle="Sous-titre extra grand (xl)"
+                titleSize="4xl"
+                subtitleSize="xl"
+                icon="heroicons:document-text"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -290,6 +323,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const showPreloader = ref(false)
 
 const handleClick = (event: MouseEvent) => {

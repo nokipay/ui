@@ -1,7 +1,7 @@
 {
   "name": "@nokipay/ui",
   "configKey": "uiLibrary",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "builder": {
     "@nuxt/module-builder": "1.0.2",
     "unbuild": "3.6.0"
