@@ -279,11 +279,6 @@
             </div>
           </div>
 
-          <!-- Badge basique -->
-          <NokiBadge label="Nouveau" />
-
-          <!-- Badge avec couleur personnalisée -->
-          <NokiBadge label="Personnalisé" color="purple" fontWeight="bold" />
         </div>
       </div>
     </div>
