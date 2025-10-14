@@ -30,19 +30,19 @@ export const TYPOGRAPHY = {
 
   // Tailles de police
   sizes: {
-    xs: '0.75rem',     // 12px
-    sm: '0.875rem',    // 14px
-    base: '1rem',      // 16px
-    lg: '1.125rem',    // 18px
-    xl: '1.25rem',     // 20px
-    '2xl': '1.5rem',   // 24px
+    xs: '0.75rem', // 12px
+    sm: '0.875rem', // 14px
+    base: '1rem', // 16px
+    lg: '1.125rem', // 18px
+    xl: '1.25rem', // 20px
+    '2xl': '1.5rem', // 24px
     '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem',  // 36px
-    '5xl': '3rem',     // 48px
-    '6xl': '3.75rem',  // 60px
-    '7xl': '4.5rem',   // 72px
-    '8xl': '6rem',     // 96px
-    '9xl': '8rem',     // 128px
+    '4xl': '2.25rem', // 36px
+    '5xl': '3rem', // 48px
+    '6xl': '3.75rem', // 60px
+    '7xl': '4.5rem', // 72px
+    '8xl': '6rem', // 96px
+    '9xl': '8rem', // 128px
   },
 
   // Hauteurs de ligne
@@ -76,7 +76,7 @@ export const TYPOGRAPHY = {
     wider: '0.05em',
     widest: '0.1em',
   },
-} as const;
+} as const
 
 // Styles prédéfinis pour les composants
 export const TEXT_STYLES = {
@@ -115,25 +115,25 @@ export const TEXT_STYLES = {
     small: `font-medium text-sm`,
     xs: `font-medium text-xs`,
   },
-} as const;
+} as const
 
 // Types pour une meilleure autocomplétion
-export type FontFamily = keyof typeof TYPOGRAPHY.fonts;
-export type FontSize = keyof typeof TYPOGRAPHY.sizes;
-export type FontWeight = keyof typeof TYPOGRAPHY.weights;
-export type LineHeight = keyof typeof TYPOGRAPHY.lineHeights;
-export type LetterSpacing = keyof typeof TYPOGRAPHY.letterSpacing;
+export type FontFamily = keyof typeof TYPOGRAPHY.fonts
+export type FontSize = keyof typeof TYPOGRAPHY.sizes
+export type FontWeight = keyof typeof TYPOGRAPHY.weights
+export type LineHeight = keyof typeof TYPOGRAPHY.lineHeights
+export type LetterSpacing = keyof typeof TYPOGRAPHY.letterSpacing
 
 // Fonction helper pour obtenir une police
 export function getFontFamily(family: FontFamily): string[] {
-  return TYPOGRAPHY.fonts[family];
+  return TYPOGRAPHY.fonts[family]
 }
 
 // CSS variables pour les polices
 export const FONT_CSS_VARIABLES = {
   '--font-sans': TYPOGRAPHY.fonts.sans.join(', '),
   '--font-mono': TYPOGRAPHY.fonts.mono.join(', '),
-  
+
   '--text-xs': TYPOGRAPHY.sizes.xs,
   '--text-sm': TYPOGRAPHY.sizes.sm,
   '--text-base': TYPOGRAPHY.sizes.base,
@@ -144,4 +144,4 @@ export const FONT_CSS_VARIABLES = {
   '--text-4xl': TYPOGRAPHY.sizes['4xl'],
   '--text-5xl': TYPOGRAPHY.sizes['5xl'],
   '--text-6xl': TYPOGRAPHY.sizes['6xl'],
-} as const;
+} as const

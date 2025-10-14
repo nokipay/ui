@@ -20,4 +20,3 @@ export default createConfigForNuxt({
       'vue/no-v-html': 'off',
     },
   })
-

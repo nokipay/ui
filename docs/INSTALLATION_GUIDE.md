@@ -26,6 +26,7 @@ pnpm playground
 **Accès :** http://localhost:3000
 
 **Pages disponibles :**
+
 - `/` - Page d'accueil avec palette de couleurs
 - `/components` - Démo des composants
 - `/design-tokens` - Tokens de design
@@ -41,6 +42,7 @@ pnpm storybook
 **Accès :** http://localhost:6006
 
 **Features :**
+
 - Documentation auto-générée
 - Interface interactive
 - 3 backgrounds (light, dark, gradient NxPay)
@@ -75,6 +77,7 @@ pnpm build
 ```
 
 **Résultat attendu :**
+
 ```
 ✓ Built in XX seconds
 dist/
@@ -125,36 +128,36 @@ pnpm format
 
 ### Développement
 
-| Script | Description | Port |
-|--------|-------------|------|
-| `pnpm dev` | Playground + Module | 3000 |
-| `pnpm playground` | Playground seul | 3000 |
-| `pnpm storybook` | Storybook | 6006 |
+| Script            | Description         | Port |
+| ----------------- | ------------------- | ---- |
+| `pnpm dev`        | Playground + Module | 3000 |
+| `pnpm playground` | Playground seul     | 3000 |
+| `pnpm storybook`  | Storybook           | 6006 |
 
 ### Build
 
-| Script | Description |
-|--------|-------------|
-| `pnpm build` | Build module |
+| Script                  | Description      |
+| ----------------------- | ---------------- |
+| `pnpm build`            | Build module     |
 | `pnpm playground:build` | Build playground |
-| `pnpm storybook:build` | Build Storybook |
+| `pnpm storybook:build`  | Build Storybook  |
 
 ### Tests
 
-| Script | Description |
-|--------|-------------|
-| `pnpm test` | Tests unitaires |
-| `pnpm test:watch` | Mode watch |
-| `pnpm test:coverage` | Avec coverage |
-| `pnpm test:ui` | Interface UI |
+| Script               | Description     |
+| -------------------- | --------------- |
+| `pnpm test`          | Tests unitaires |
+| `pnpm test:watch`    | Mode watch      |
+| `pnpm test:coverage` | Avec coverage   |
+| `pnpm test:ui`       | Interface UI    |
 
 ### Qualité
 
-| Script | Description |
-|--------|-------------|
-| `pnpm lint` | Linter ESLint |
-| `pnpm lint:fix` | Fix automatique |
-| `pnpm format` | Prettier |
+| Script              | Description     |
+| ------------------- | --------------- |
+| `pnpm lint`         | Linter ESLint   |
+| `pnpm lint:fix`     | Fix automatique |
+| `pnpm format`       | Prettier        |
 | `pnpm format:check` | Vérifier format |
 
 ---
@@ -211,14 +214,14 @@ import NokiButton from '@/components/Button/index.vue'
 describe('NokiButton', () => {
   it('affiche le label correctement', () => {
     const wrapper = mount(NokiButton, {
-      props: { label: 'Test' }
+      props: { label: 'Test' },
     })
     expect(wrapper.text()).toContain('Test')
   })
 
   it('applique la couleur primary', () => {
     const wrapper = mount(NokiButton, {
-      props: { label: 'Test', color: 'primary' }
+      props: { label: 'Test', color: 'primary' },
     })
     expect(wrapper.classes()).toContain('bg-nxGreen-500')
   })
@@ -226,6 +229,7 @@ describe('NokiButton', () => {
 ```
 
 Exécutez :
+
 ```bash
 pnpm test
 ```
@@ -249,8 +253,8 @@ type Story = StoryObj<typeof NokiBadge>
 
 export const Default: Story = {
   args: {
-    label: 'Badge'
-  }
+    label: 'Badge',
+  },
 }
 ```
 
@@ -365,4 +369,3 @@ pnpm storybook
 **Version :** 2.0.0  
 **Date :** Octobre 2025  
 **Équipe :** NxPay Team
-

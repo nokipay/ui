@@ -6,18 +6,18 @@ const props = defineProps({
   totalCount: { type: Number, default: 0 },
   totalLabel: { type: String, default: '' },
   searchPlaceholder: { type: String, default: 'Rechercher...' },
-});
+})
 
-const emit = defineEmits(['update:searchQuery', 'update:page', 'update:pageCount']);
+const emit = defineEmits(['update:searchQuery', 'update:page', 'update:pageCount'])
 
 function updateSearchQuery(val: string) {
-  emit('update:searchQuery', val);
+  emit('update:searchQuery', val)
 }
 function updatePage(val: number) {
-  emit('update:page', val);
+  emit('update:page', val)
 }
 function updatePageCount(val: number) {
-  emit('update:pageCount', val);
+  emit('update:pageCount', val)
 }
 </script>
 
@@ -32,7 +32,7 @@ function updatePageCount(val: number) {
             <TableElementByPage
               v-model="props.pageCount"
               class="bg-white rounded-lg relative"
-              @update:modelValue="updatePageCount"
+              @update:model-value="updatePageCount"
             />
           </div>
           <div class="relative w-full sm:w-96">
@@ -40,10 +40,10 @@ function updatePageCount(val: number) {
               required
               class="rounded-full shadow-sm border-0 bg-white"
               :model-value="props.searchQuery"
-              @update:modelValue="updateSearchQuery"
               icon="i-heroicons-magnifying-glass"
               :placeholder="props.searchPlaceholder"
               size="md"
+              @update:model-value="updateSearchQuery"
             />
           </div>
         </div>
@@ -53,7 +53,9 @@ function updatePageCount(val: number) {
         <slot name="table" />
       </div>
       <!-- Footer (pagination info + pagination) -->
-      <div class="bg-white border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div
+        class="bg-white border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4"
+      >
         <TablePaginationInfo
           :page="props.page"
           :page-count="props.pageCount"
@@ -67,7 +69,7 @@ function updatePageCount(val: number) {
           :page-count="props.pageCount"
           :total="props.totalCount"
           size="sm"
-          @update:modelValue="updatePage"
+          @update:model-value="updatePage"
         />
       </div>
     </div>

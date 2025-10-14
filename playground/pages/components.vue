@@ -31,7 +31,9 @@
         <span class="bg-nxTeal-100 text-nxTeal-800 px-3 py-1 rounded-full text-sm font-medium">
           Info
         </span>
-        <span class="bg-nxBlueTurquoise-100 text-nxBlueTurquoise-800 px-3 py-1 rounded-full text-sm font-medium">
+        <span
+          class="bg-nxBlueTurquoise-100 text-nxBlueTurquoise-800 px-3 py-1 rounded-full text-sm font-medium"
+        >
           Processing
         </span>
         <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -67,4 +69,3 @@
 <script setup lang="ts">
 // Composants NxPay UI sont auto-importés
 </script>
-

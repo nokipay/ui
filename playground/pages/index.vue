@@ -8,14 +8,14 @@
           Bibliothèque de composants moderne avec une palette de 5 couleurs harmonieuses
         </p>
         <div class="flex gap-4 justify-center">
-          <NuxtLink 
-            to="/components" 
+          <NuxtLink
+            to="/components"
             class="bg-white text-nxGreen-600 px-6 py-3 rounded-full font-semibold hover:scale-105 transition-transform"
           >
             Explorer les Composants
           </NuxtLink>
-          <NuxtLink 
-            to="/design-tokens" 
+          <NuxtLink
+            to="/design-tokens"
             class="bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full font-semibold hover:bg-white/30 transition-colors"
           >
             Design Tokens
@@ -34,28 +34,28 @@
           <p class="text-sm text-gray-500">#77F07F</p>
           <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Primary</span>
         </div>
-        
+
         <div class="text-center">
           <div class="w-full h-32 bg-nxTeal-500 rounded-xl mb-3 shadow-nxpay-teal"></div>
           <h4 class="font-semibold text-gray-900">Teal</h4>
           <p class="text-sm text-gray-500">#3FC995</p>
           <span class="text-xs bg-teal-100 text-teal-800 px-2 py-1 rounded-full">Secondary</span>
         </div>
-        
+
         <div class="text-center">
           <div class="w-full h-32 bg-nxBlueTurquoise-500 rounded-xl mb-3"></div>
           <h4 class="font-semibold text-gray-900">Bleu Turquoise</h4>
           <p class="text-sm text-gray-500">#40A0AE</p>
           <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Tertiary</span>
         </div>
-        
+
         <div class="text-center">
           <div class="w-full h-32 bg-nxBlue-500 rounded-xl mb-3"></div>
           <h4 class="font-semibold text-gray-900">Bleu Moyen</h4>
           <p class="text-sm text-gray-500">#37669C</p>
           <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Quaternary</span>
         </div>
-        
+
         <div class="text-center">
           <div class="w-full h-32 bg-nxPurple-500 rounded-xl mb-3"></div>
           <h4 class="font-semibold text-gray-900">Violet Foncé</h4>
@@ -89,4 +89,3 @@
     </section>
   </div>
 </template>
-

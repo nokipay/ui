@@ -147,21 +147,21 @@ export const COLORS = {
   white: '#ffffff',
   black: '#000000',
   transparent: 'transparent',
-} as const;
+} as const
 
 // Types pour une meilleure autocomplétion
-export type ColorName = keyof typeof COLORS;
-export type ColorShade = keyof typeof COLORS.primary;
+export type ColorName = keyof typeof COLORS
+export type ColorShade = keyof typeof COLORS.primary
 
 // Fonction helper pour obtenir une couleur
 export function getColor(name: ColorName, shade?: ColorShade): string {
-  const color = COLORS[name];
-  
+  const color = COLORS[name]
+
   if (typeof color === 'string') {
-    return color;
+    return color
   }
-  
-  return shade ? color[shade] : color.DEFAULT;
+
+  return shade ? color[shade] : color.DEFAULT
 }
 
 // Couleurs CSS custom properties pour Tailwind
@@ -177,12 +177,12 @@ export const CSS_VARIABLES = {
   '--color-primary-700': COLORS.primary[700],
   '--color-primary-800': COLORS.primary[800],
   '--color-primary-900': COLORS.primary[900],
-  
+
   '--color-success': COLORS.success.DEFAULT,
   '--color-warning': COLORS.warning.DEFAULT,
   '--color-error': COLORS.error.DEFAULT,
   '--color-info': COLORS.info.DEFAULT,
-  
+
   '--color-gray-50': COLORS.gray[50],
   '--color-gray-100': COLORS.gray[100],
   '--color-gray-200': COLORS.gray[200],
@@ -193,4 +193,4 @@ export const CSS_VARIABLES = {
   '--color-gray-700': COLORS.gray[700],
   '--color-gray-800': COLORS.gray[800],
   '--color-gray-900': COLORS.gray[900],
-} as const;
+} as const

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "types": ["vitest/globals", "@nuxt/types"],
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/runtime/*"],
+      "~/*": ["src/runtime/*"],
+      "#app": ["node_modules/nuxt/dist/app"]
+    }
+  },
+  "include": ["src/**/*", "tests/**/*", "playground/**/*"],
+  "exclude": ["node_modules", "dist", ".nuxt", ".output"]
+}

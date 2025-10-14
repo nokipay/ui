@@ -1,14 +1,20 @@
-import { defineNuxtModule, addPlugin, createResolver, installModule, addComponentsDir } from '@nuxt/kit'
+import {
+  defineNuxtModule,
+  addPlugin,
+  createResolver,
+  installModule,
+  addComponentsDir,
+} from '@nuxt/kit'
 
 export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: '@nokipay/ui',
-    configKey: 'uiLibrary'
+    configKey: 'uiLibrary',
   },
   defaults: {},
-  async setup (options, nuxt) {
+  async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     // Install Nuxt UI as dependency
@@ -18,9 +24,9 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolver.resolve('./runtime/components'),
       pathPrefix: true,
       prefix: 'Noki',
-      global: true
+      global: true,
     })
 
     addPlugin(resolver.resolve('./runtime/plugin'))
-  }
+  },
 })

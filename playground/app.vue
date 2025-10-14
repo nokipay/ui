@@ -11,15 +11,21 @@
               <p class="text-sm text-gray-500">Component Playground v2.0</p>
             </div>
           </div>
-          
+
           <nav class="flex gap-4">
             <NuxtLink to="/" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
               Home
             </NuxtLink>
-            <NuxtLink to="/components" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
+            <NuxtLink
+              to="/components"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
               Components
             </NuxtLink>
-            <NuxtLink to="/design-tokens" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
+            <NuxtLink
+              to="/design-tokens"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
               Design Tokens
             </NuxtLink>
           </nav>

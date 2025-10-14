@@ -13,7 +13,7 @@
             linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%)
           </code>
         </div>
-        
+
         <div>
           <p class="text-sm text-gray-600 mb-2">Gradient Vertical (180deg)</p>
           <div class="h-24 gradient-nxpay-vertical rounded-xl"></div>
@@ -77,4 +77,3 @@
     </section>
   </div>
 </template>
-

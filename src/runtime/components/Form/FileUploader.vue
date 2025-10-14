@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, watch, onUnmounted } from 'vue';
+import { ref, computed, watch, onUnmounted } from 'vue'
 
 interface Props {
   acceptFormats?: string[]
@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
   multiple: false,
   placeholder: 'Cliquez pour sélectionner un fichier',
   previewSize: 'w-40 h-40',
-  showPreview: true
+  showPreview: true,
 })
 
 const files = defineModel<File | File[] | null>()
@@ -57,7 +57,12 @@ function getFileIcon(file: File): string {
   }
 
   // Excel
-  if (type.includes('sheet') || extension === 'xls' || extension === 'xlsx' || extension === 'csv') {
+  if (
+    type.includes('sheet') ||
+    extension === 'xls' ||
+    extension === 'xlsx' ||
+    extension === 'csv'
+  ) {
     return 'heroicons:table-cells'
   }
 
@@ -67,7 +72,13 @@ function getFileIcon(file: File): string {
   }
 
   // Archives
-  if (type.includes('zip') || type.includes('rar') || extension === 'zip' || extension === 'rar' || extension === '7z') {
+  if (
+    type.includes('zip') ||
+    type.includes('rar') ||
+    extension === 'zip' ||
+    extension === 'rar' ||
+    extension === '7z'
+  ) {
     return 'heroicons:archive-box'
   }
 
@@ -82,8 +93,16 @@ function getFileIcon(file: File): string {
   }
 
   // Code
-  if (extension === 'js' || extension === 'ts' || extension === 'html' || extension === 'css' ||
-      extension === 'vue' || extension === 'php' || extension === 'py' || extension === 'java') {
+  if (
+    extension === 'js' ||
+    extension === 'ts' ||
+    extension === 'html' ||
+    extension === 'css' ||
+    extension === 'vue' ||
+    extension === 'php' ||
+    extension === 'py' ||
+    extension === 'java'
+  ) {
     return 'heroicons:code-bracket'
   }
 
@@ -102,20 +121,22 @@ function formatFileSize(bytes: number): string {
   const k = 1024
   const sizes = ['Bytes', 'Ko', 'Mo', 'Go']
   const i = Math.floor(Math.log(bytes) / Math.log(k))
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
+  return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
 }
 
 // Validation d'un fichier
 function validateFile(file: File): string | null {
   if (props.acceptFormats.length > 0 && !props.acceptFormats.includes(file.type)) {
-    const extensions = props.acceptFormats.map(format => {
-      // Convertir les types MIME en extensions lisibles
-      if (format === 'application/pdf') return 'PDF'
-      if (format.includes('word')) return 'Word'
-      if (format.includes('sheet')) return 'Excel'
-      if (format.startsWith('image/')) return 'Image'
-      return format
-    }).join(', ')
+    const extensions = props.acceptFormats
+      .map((format) => {
+        // Convertir les types MIME en extensions lisibles
+        if (format === 'application/pdf') return 'PDF'
+        if (format.includes('word')) return 'Word'
+        if (format.includes('sheet')) return 'Excel'
+        if (format.startsWith('image/')) return 'Image'
+        return format
+      })
+      .join(', ')
     return `Le format ${file.type} n'est pas accepté. Formats autorisés : ${extensions}`
   }
 
@@ -141,8 +162,8 @@ function processFiles(fileList: FileList | File[]) {
   }
 
   // Créer les URLs de prévisualisation pour les images uniquement
-  previewUrls.value.forEach(url => URL.revokeObjectURL(url))
-  previewUrls.value = selectedFiles.map(file => {
+  previewUrls.value.forEach((url) => URL.revokeObjectURL(url))
+  previewUrls.value = selectedFiles.map((file) => {
     return isImageFile(file) ? URL.createObjectURL(file) : ''
   })
 
@@ -196,7 +217,7 @@ function removeFile(index?: number) {
     previewUrls.value.splice(index, 1)
   } else {
     // Supprimer tous les fichiers
-    previewUrls.value.forEach(url => {
+    previewUrls.value.forEach((url) => {
       if (url) URL.revokeObjectURL(url)
     })
     previewUrls.value = []
@@ -223,7 +244,7 @@ const filesArray = computed(() => {
 // Watcher pour nettoyer les URLs quand le model change
 watch(files, (newValue) => {
   if (newValue === null || newValue === undefined) {
-    previewUrls.value.forEach(url => {
+    previewUrls.value.forEach((url) => {
       if (url) URL.revokeObjectURL(url)
     })
     previewUrls.value = []
@@ -232,7 +253,7 @@ watch(files, (newValue) => {
 
 // Nettoyage lors de la destruction du composant
 onUnmounted(() => {
-  previewUrls.value.forEach(url => {
+  previewUrls.value.forEach((url) => {
     if (url) URL.revokeObjectURL(url)
   })
 })
@@ -246,7 +267,7 @@ onUnmounted(() => {
       :class="{
         'border-primary-400 bg-primary-50': isDragOver,
         'border-gray-300 hover:border-gray-400': !isDragOver,
-        'border-red-300': errorMessage
+        'border-red-300': errorMessage,
       }"
       @dragover="handleDragOver"
       @dragleave="handleDragLeave"
@@ -267,11 +288,9 @@ onUnmounted(() => {
         </p>
         <p class="text-xs text-gray-400 mt-2">
           <span v-if="props.acceptFormats.length > 0">
-            Formats acceptés : {{ props.acceptFormats.join(', ') }}<br>
+            Formats acceptés : {{ props.acceptFormats.join(', ') }}<br />
           </span>
-          <span v-else>
-            Tous types de fichiers acceptés<br>
-          </span>
+          <span v-else> Tous types de fichiers acceptés<br /> </span>
           Taille max : {{ formatFileSize(props.maxSize * 1024) }}
         </p>
       </div>
@@ -307,18 +326,13 @@ onUnmounted(() => {
               </p>
             </div>
             <div class="flex justify-center space-x-2">
+              <UButton variant="outline" size="sm" label="Changer" @click="triggerFileSelect" />
               <UButton
-                @click="triggerFileSelect"
-                variant="outline"
-                size="sm"
-                label="Changer"
-              />
-              <UButton
-                @click="removeFile()"
                 color="red"
                 variant="outline"
                 size="sm"
                 label="Supprimer"
+                @click="removeFile()"
               />
             </div>
           </div>
@@ -340,7 +354,10 @@ onUnmounted(() => {
                   class="w-12 h-12 rounded object-cover"
                   alt="Aperçu"
                 />
-                <div v-else class="w-12 h-12 bg-white rounded flex items-center justify-center border">
+                <div
+                  v-else
+                  class="w-12 h-12 bg-white rounded flex items-center justify-center border"
+                >
                   <UIcon :name="getFileIcon(file)" class="w-6 h-6 text-gray-500" />
                 </div>
               </div>
@@ -357,8 +374,8 @@ onUnmounted(() => {
 
               <!-- Bouton supprimer -->
               <button
-                @click="removeFile(index)"
                 class="flex-shrink-0 ml-3 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center hover:bg-red-200 transition-colors"
+                @click="removeFile(index)"
               >
                 <UIcon name="heroicons:x-mark" class="w-4 h-4" />
               </button>
@@ -396,10 +413,15 @@ onUnmounted(() => {
     </div>
 
     <!-- Informations sur les fichiers sélectionnés -->
-    <div v-if="files && filesArray.length > 0" class="mt-3 p-3 bg-green-50 border border-green-200 rounded-md">
+    <div
+      v-if="files && filesArray.length > 0"
+      class="mt-3 p-3 bg-green-50 border border-green-200 rounded-md"
+    >
       <p class="text-sm text-green-600 flex items-center">
         <UIcon name="heroicons:check-circle" class="w-4 h-4 mr-2" />
-        {{ filesArray.length }} fichier{{ filesArray.length > 1 ? 's' : '' }} sélectionné{{ filesArray.length > 1 ? 's' : '' }}
+        {{ filesArray.length }} fichier{{ filesArray.length > 1 ? 's' : '' }} sélectionné{{
+          filesArray.length > 1 ? 's' : ''
+        }}
         <span class="ml-2 text-xs">
           ({{ formatFileSize(filesArray.reduce((total, file) => total + file.size, 0)) }})
         </span>

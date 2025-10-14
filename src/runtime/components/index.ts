@@ -1,33 +1,33 @@
 // Button components
-export { default as Button } from './Button/index.vue';
-export { default as ButtonAction } from './Button/Action.vue';
+export { default as Button } from './Button/index.vue'
+export { default as ButtonAction } from './Button/Action.vue'
 
 // Card components
-export { default as Card } from './Card/index.vue';
+export { default as Card } from './Card/index.vue'
 
 // Confirm components
-export { default as ConfirmDialog } from './Confirm/Dialog.vue';
-export { default as Confirm } from './Confirm/index.vue';
+export { default as ConfirmDialog } from './Confirm/Dialog.vue'
+export { default as Confirm } from './Confirm/index.vue'
 
 // Form components
-export { default as FormAuth } from './Form/Auth.vue';
-export { default as FormFileUploader } from './Form/FileUploader.vue';
-export { default as FormInput } from './Form/Input.vue';
-export { default as FormPhoneInput } from './Form/PhoneInput.vue';
-export { default as FormWrapper } from './Form/Wrapper.vue';
+export { default as FormAuth } from './Form/Auth.vue'
+export { default as FormFileUploader } from './Form/FileUploader.vue'
+export { default as FormInput } from './Form/Input.vue'
+export { default as FormPhoneInput } from './Form/PhoneInput.vue'
+export { default as FormWrapper } from './Form/Wrapper.vue'
 
 // Page components
-export { default as NokiHeader } from './Header.vue';
+export { default as NokiHeader } from './Header.vue'
 
 // Badge components
-export { default as NokiBadge } from './Badge.vue';
+export { default as NokiBadge } from './Badge.vue'
 
 // Table components
-export { default as TableElementByPage } from './Table/ElementByPage.vue';
-export { default as TablePaginationInfo } from './Table/PaginationInfo.vue';
-export { default as TableWrapper } from './Table/Wrapper.vue';
+export { default as TableElementByPage } from './Table/ElementByPage.vue'
+export { default as TablePaginationInfo } from './Table/PaginationInfo.vue'
+export { default as TableWrapper } from './Table/Wrapper.vue'
 
 // Standalone components
-export { default as InitData } from './InitData.vue';
-export { default as NetworkStatus } from './NetworkStatus.vue';
-export { default as Preloader } from './Preloader.vue';
+export { default as InitData } from './InitData.vue'
+export { default as NetworkStatus } from './NetworkStatus.vue'
+export { default as Preloader } from './Preloader.vue'

@@ -14,7 +14,7 @@ const meta: Meta<typeof NokiButton> = {
     shadowType: {
       control: 'select',
       options: ['dark', 'soft'],
-      description: 'Type d\'ombre',
+      description: "Type d'ombre",
     },
     label: {
       control: 'text',
@@ -108,4 +108,3 @@ export const AllColors: Story = {
     `,
   }),
 }
-

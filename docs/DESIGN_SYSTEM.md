@@ -10,21 +10,22 @@ Le Design System NxPay est une bibliothèque de design moderne basée sur une pa
 
 ### Couleurs Principales (par priorité d'utilisation)
 
-| Couleur | Hex | Priorité | Usage Principal |
-|---------|-----|----------|-----------------|
-| **Vert Clair** | `#77F07F` | 1 | Couleur primaire, CTAs, boutons principaux, succès |
-| **Teal** | `#3FC995` | 2 | Couleur secondaire, accents, liens |
-| **Bleu Turquoise** | `#40A0AE` | 3 | Informations, états informatifs |
-| **Bleu Moyen** | `#37669C` | 4 | Navigation, éléments secondaires |
-| **Violet Foncé** | `#3A2F6B` | 5 | Accents sombres, textes importants |
+| Couleur            | Hex       | Priorité | Usage Principal                                    |
+| ------------------ | --------- | -------- | -------------------------------------------------- |
+| **Vert Clair**     | `#77F07F` | 1        | Couleur primaire, CTAs, boutons principaux, succès |
+| **Teal**           | `#3FC995` | 2        | Couleur secondaire, accents, liens                 |
+| **Bleu Turquoise** | `#40A0AE` | 3        | Informations, états informatifs                    |
+| **Bleu Moyen**     | `#37669C` | 4        | Navigation, éléments secondaires                   |
+| **Violet Foncé**   | `#3A2F6B` | 5        | Accents sombres, textes importants                 |
 
 ### Gradient Signature NxPay
 
 ```css
-background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+background: linear-gradient(135deg, #77f07f 0%, #3fc995 50%, #40a0ae 100%);
 ```
 
 **Variantes disponibles :**
+
 - Horizontal : `linear-gradient(90deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%)`
 - Vertical : `linear-gradient(180deg, #77F07F 0%, #3FC995 100%)`
 - Avec transparence : `linear-gradient(135deg, rgba(119, 240, 127, 0.8) 0%, rgba(63, 201, 149, 0.8) 100%)`
@@ -36,6 +37,7 @@ background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
 ### Classes disponibles
 
 #### Couleurs Principales
+
 ```html
 <!-- Vert (Primary) -->
 <div class="bg-nxGreen-500 text-white">Primary Button</div>
@@ -54,6 +56,7 @@ background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
 ```
 
 #### Échelle de teintes (50 à 950)
+
 Chaque couleur possède 11 nuances :
 
 ```html
@@ -69,9 +72,9 @@ Chaque couleur possède 11 nuances :
 Pour faciliter la migration depuis NokiPay, des alias sont disponibles :
 
 ```typescript
-primary: '#77F07F'      // Équivalent à nxGreen-500
-secondary: '#3FC995'    // Équivalent à nxTeal-500
-tertiary: '#40A0AE'     // Équivalent à nxBlueTurquoise-500
+primary: '#77F07F' // Équivalent à nxGreen-500
+secondary: '#3FC995' // Équivalent à nxTeal-500
+tertiary: '#40A0AE' // Équivalent à nxBlueTurquoise-500
 ```
 
 ---
@@ -85,10 +88,10 @@ tertiary: '#40A0AE'     // Équivalent à nxBlueTurquoise-500
   <!-- Bouton Primary (Vert) -->
   <NokiButton color="primary" label="Action Principale" />
   <NokiButton color="green" label="Action Principale" />
-  
+
   <!-- Bouton Secondary (Teal) -->
   <NokiButton color="secondary" label="Action Secondaire" />
-  
+
   <!-- Avec shadow NxPay -->
   <NokiButton color="primary" shadowType="dark" label="Avec Ombre" />
 </template>
@@ -100,7 +103,9 @@ tertiary: '#40A0AE'     // Équivalent à nxBlueTurquoise-500
 
 ```vue
 <template>
-  <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-nxGreen-500 to-nxTeal-500 p-6 text-white">
+  <div
+    class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-nxGreen-500 to-nxTeal-500 p-6 text-white"
+  >
     <h3 class="text-2xl font-bold">Card avec Gradient NxPay</h3>
     <p>Contenu de la card</p>
   </div>
@@ -112,12 +117,16 @@ tertiary: '#40A0AE'     // Équivalent à nxBlueTurquoise-500
 ```vue
 <template>
   <!-- Success (Vert) -->
-  <span class="inline-flex items-center rounded-full bg-nxGreen-100 px-3 py-1 text-sm font-medium text-nxGreen-800">
+  <span
+    class="inline-flex items-center rounded-full bg-nxGreen-100 px-3 py-1 text-sm font-medium text-nxGreen-800"
+  >
     Actif
   </span>
-  
+
   <!-- Info (Bleu Turquoise) -->
-  <span class="inline-flex items-center rounded-full bg-nxBlueTurquoise-100 px-3 py-1 text-sm font-medium text-nxBlueTurquoise-800">
+  <span
+    class="inline-flex items-center rounded-full bg-nxBlueTurquoise-100 px-3 py-1 text-sm font-medium text-nxBlueTurquoise-800"
+  >
     En cours
   </span>
 </template>
@@ -130,55 +139,55 @@ tertiary: '#40A0AE'     // Équivalent à nxBlueTurquoise-500
 ### Import des tokens
 
 ```typescript
-import { designTokens } from '@nxpay/ui/utils/designTokens';
-import { colors, gradients, shadows } from '@nxpay/ui/utils/designTokens';
+import { designTokens } from '@nxpay/ui/utils/designTokens'
+import { colors, gradients, shadows } from '@nxpay/ui/utils/designTokens'
 
 // Utilisation
-const primaryColor = colors.nxGreen; // '#77F07F'
-const gradient = gradients.primary;
+const primaryColor = colors.nxGreen // '#77F07F'
+const gradient = gradients.primary
 ```
 
 ### Couleurs disponibles
 
 ```typescript
-import { colors } from '@nxpay/ui/utils/designTokens';
+import { colors } from '@nxpay/ui/utils/designTokens'
 
-colors.nxGreen          // '#77F07F'
-colors.nxTeal           // '#3FC995'
-colors.nxBlueTurquoise  // '#40A0AE'
-colors.nxBlue           // '#37669C'
-colors.nxPurple         // '#3A2F6B'
+colors.nxGreen // '#77F07F'
+colors.nxTeal // '#3FC995'
+colors.nxBlueTurquoise // '#40A0AE'
+colors.nxBlue // '#37669C'
+colors.nxPurple // '#3A2F6B'
 
 // Alias
-colors.primary          // '#77F07F'
-colors.secondary        // '#3FC995'
-colors.tertiary         // '#40A0AE'
+colors.primary // '#77F07F'
+colors.secondary // '#3FC995'
+colors.tertiary // '#40A0AE'
 
 // Sémantiques
-colors.success          // '#77F07F' (Vert)
-colors.info             // '#40A0AE' (Bleu Turquoise)
-colors.warning          // '#f59e0b'
-colors.error            // '#ef4444'
+colors.success // '#77F07F' (Vert)
+colors.info // '#40A0AE' (Bleu Turquoise)
+colors.warning // '#f59e0b'
+colors.error // '#ef4444'
 ```
 
 ### Gradients
 
 ```typescript
-import { gradients } from '@nxpay/ui/utils/designTokens';
+import { gradients } from '@nxpay/ui/utils/designTokens'
 
-gradients.primary       // Gradient signature
-gradients.button        // Gradient pour boutons
-gradients.card          // Gradient subtil pour cards
+gradients.primary // Gradient signature
+gradients.button // Gradient pour boutons
+gradients.card // Gradient subtil pour cards
 ```
 
 ### Shadows
 
 ```typescript
-import { shadows } from '@nxpay/ui/utils/designTokens';
+import { shadows } from '@nxpay/ui/utils/designTokens'
 
-shadows.nxGreen         // '0 4px 14px 0 rgba(119, 240, 127, 0.39)'
-shadows.nxTeal          // '0 4px 14px 0 rgba(63, 201, 149, 0.39)'
-shadows.glass           // Shadow pour glassmorphism
+shadows.nxGreen // '0 4px 14px 0 rgba(119, 240, 127, 0.39)'
+shadows.nxTeal // '0 4px 14px 0 rgba(63, 201, 149, 0.39)'
+shadows.glass // Shadow pour glassmorphism
 ```
 
 ---
@@ -201,11 +210,13 @@ module.exports = {
           500: '#77F07F',
           // ...
         },
-        nxTeal: { /* ... */ },
+        nxTeal: {
+          /* ... */
+        },
         // etc.
-      }
-    }
-  }
+      },
+    },
+  },
 }
 ```
 
@@ -217,8 +228,8 @@ Assurez-vous d'inclure les couleurs dans la safelist :
 // nuxt.config.ts
 export default defineNuxtConfig({
   ui: {
-    safelistColors: ["nxGreen", "nxTeal", "nxBlueTurquoise", "nxBlue", "nxPurple"],
-  }
+    safelistColors: ['nxGreen', 'nxTeal', 'nxBlueTurquoise', 'nxBlue', 'nxPurple'],
+  },
 })
 ```
 
@@ -257,7 +268,7 @@ borderRadius.full  // 9999px (circle)
 ### Styles prédéfinis
 
 ```typescript
-import { glassmorphism } from '@nxpay/ui/utils/designTokens';
+import { glassmorphism } from '@nxpay/ui/utils/designTokens'
 
 // Light glassmorphism
 glassmorphism.light
@@ -275,9 +286,7 @@ glassmorphism.nxGreen
 
 ```vue
 <template>
-  <div class="glassmorphic-card">
-    Contenu avec effet glass
-  </div>
+  <div class="glassmorphic-card">Contenu avec effet glass</div>
 </template>
 
 <style scoped>
@@ -298,9 +307,9 @@ glassmorphism.nxGreen
 ### Durées
 
 ```typescript
-transitions.duration.fast    // 150ms
-transitions.duration.normal  // 300ms
-transitions.duration.slow    // 500ms
+transitions.duration.fast // 150ms
+transitions.duration.normal // 300ms
+transitions.duration.slow // 500ms
 ```
 
 ### Timing Functions
@@ -315,9 +324,9 @@ transitions.timing.easeInOut
 ### Transitions prédéfinies
 
 ```typescript
-transitions.all        // 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)'
-transitions.colors     // Pour transitions de couleurs
-transitions.transform  // Pour transitions de transformation
+transitions.all // 'all 300ms cubic-bezier(0.4, 0, 0.2, 1)'
+transitions.colors // Pour transitions de couleurs
+transitions.transform // Pour transitions de transformation
 ```
 
 ---
@@ -325,10 +334,10 @@ transitions.transform  // Pour transitions de transformation
 ## 📱 Breakpoints
 
 ```typescript
-breakpoints.sm     // 640px
-breakpoints.md     // 768px
-breakpoints.lg     // 1024px
-breakpoints.xl     // 1280px
+breakpoints.sm // 640px
+breakpoints.md // 768px
+breakpoints.lg // 1024px
+breakpoints.xl // 1280px
 breakpoints['2xl'] // 1536px
 ```
 
@@ -373,13 +382,13 @@ Utilisez les couleurs selon leur priorité :
 
 ### Remplacement des couleurs
 
-| Ancien (NokiPay) | Nouveau (NxPay) | Commentaire |
-|------------------|-----------------|-------------|
-| `nokiYellow-500` | `nxGreen-500` | Couleur principale |
-| `bg-yellow-400` | `bg-nxGreen-500` | Boutons primaires |
-| `dark-green` | `nxTeal-500` | Couleur secondaire |
-| `light-blue` | `nxBlueTurquoise-500` | Éléments info |
-| `dark-blue` | `nxBlue-500` | Navigation |
+| Ancien (NokiPay) | Nouveau (NxPay)       | Commentaire        |
+| ---------------- | --------------------- | ------------------ |
+| `nokiYellow-500` | `nxGreen-500`         | Couleur principale |
+| `bg-yellow-400`  | `bg-nxGreen-500`      | Boutons primaires  |
+| `dark-green`     | `nxTeal-500`          | Couleur secondaire |
+| `light-blue`     | `nxBlueTurquoise-500` | Éléments info      |
+| `dark-blue`      | `nxBlue-500`          | Navigation         |
 
 ### Script de migration (exemple)
 
@@ -410,4 +419,3 @@ Propriétaire - NxPay © 2025
 **Version :** 2.0.0  
 **Dernière mise à jour :** Octobre 2025  
 **Mainteneur :** Équipe Design NxPay
-

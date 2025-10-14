@@ -1,3 +1,3 @@
 export const useCustomConfirm = () => {
-    return inject<Ref<{ show: Function }>>('confirm')
-};
+  return inject<Ref<{ show: Function }>>('confirm')
+}

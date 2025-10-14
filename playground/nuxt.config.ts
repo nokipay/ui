@@ -1,19 +1,8 @@
 export default defineNuxtConfig({
   modules: ['../src/module', '@nuxtjs/tailwindcss'],
-  
+
   devtools: { enabled: true },
-  
-  css: ['~/assets/css/tailwind.css'],
-  
-  tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
-    configPath: 'tailwind.config.ts',
-    exposeConfig: true,
-    viewer: true,
-  },
-  
-  compatibilityDate: '2024-04-03',
-  
+
   app: {
     head: {
       title: 'NxPay UI Playground',
@@ -23,5 +12,16 @@ export default defineNuxtConfig({
         { name: 'description', content: 'NxPay UI Component Playground' },
       ],
     },
+  },
+
+  css: ['~/assets/css/tailwind.css'],
+
+  compatibilityDate: '2024-04-03',
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.ts',
+    exposeConfig: true,
+    viewer: true,
   },
 })

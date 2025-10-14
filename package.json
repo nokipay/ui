@@ -1,7 +1,7 @@
 {
   "name": "@nxpay/ui",
   "version": "2.0.0",
-  "description": "A modern UI library for NxPay Web applications with a beautiful green-to-purple color palette",
+  "description": "A UI library for NokiPay Web applications",
   "type": "module",
   "exports": {
     ".": {
@@ -76,8 +76,8 @@
     "storybook": "^7.6.20",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
-    "vite": "^6.0.5",
-    "vitest": "^3.2.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8",
     "vue": "^3.5.13",
     "vue-tsc": "^2.1.10"
   },

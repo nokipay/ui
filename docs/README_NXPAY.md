@@ -24,7 +24,7 @@ La bibliothèque a été entièrement rebrandée de **NokiPay** (jaune) vers **N
 #### Gradient Signature NxPay
 
 ```css
-background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+background: linear-gradient(135deg, #77f07f 0%, #3fc995 50%, #40a0ae 100%);
 ```
 
 ---
@@ -48,18 +48,12 @@ npm install @nxpay/ui@^2.0.0
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
-    '@nxpay/ui'  // ✅ Nouveau nom
+    '@nxpay/ui', // ✅ Nouveau nom
   ],
-  
+
   ui: {
-    safelistColors: [
-      'nxGreen',
-      'nxTeal', 
-      'nxBlueTurquoise',
-      'nxBlue',
-      'nxPurple'
-    ]
-  }
+    safelistColors: ['nxGreen', 'nxTeal', 'nxBlueTurquoise', 'nxBlue', 'nxPurple'],
+  },
 })
 ```
 
@@ -72,12 +66,16 @@ module.exports = {
     extend: {
       colors: {
         // Les couleurs NxPay sont déjà incluses !
-        nxGreen: { /* ... */ },
-        nxTeal: { /* ... */ },
+        nxGreen: {
+          /* ... */
+        },
+        nxTeal: {
+          /* ... */
+        },
         // etc.
-      }
-    }
-  }
+      },
+    },
+  },
 }
 ```
 
@@ -91,16 +89,12 @@ module.exports = {
 <template>
   <!-- Bouton Primary (Vert) -->
   <NokiButton color="primary" label="Action Principale" />
-  
+
   <!-- Bouton Secondary (Teal) -->
   <NokiButton color="secondary" label="Action Secondaire" />
-  
+
   <!-- Avec shadow NxPay -->
-  <NokiButton 
-    color="primary" 
-    shadowType="dark" 
-    label="Bouton avec Glow"
-  />
+  <NokiButton color="primary" shadowType="dark" label="Bouton avec Glow" />
 </template>
 ```
 
@@ -120,10 +114,8 @@ module.exports = {
 ```vue
 <template>
   <!-- Success (Vert) -->
-  <span class="bg-nxGreen-100 text-nxGreen-800 px-3 py-1 rounded-full">
-    Actif
-  </span>
-  
+  <span class="bg-nxGreen-100 text-nxGreen-800 px-3 py-1 rounded-full"> Actif </span>
+
   <!-- Info (Bleu Turquoise) -->
   <span class="bg-nxBlueTurquoise-100 text-nxBlueTurquoise-800 px-3 py-1 rounded-full">
     En cours
@@ -134,17 +126,17 @@ module.exports = {
 ### Utilisation des Design Tokens (TypeScript)
 
 ```typescript
-import { colors, gradients, shadows } from '@nxpay/ui/utils/designTokens';
+import { colors, gradients, shadows } from '@nxpay/ui/utils/designTokens'
 
 // Couleurs
-const primary = colors.nxGreen;        // '#77F07F'
-const secondary = colors.nxTeal;       // '#3FC995'
+const primary = colors.nxGreen // '#77F07F'
+const secondary = colors.nxTeal // '#3FC995'
 
 // Gradients
-const heroGradient = gradients.primary;
+const heroGradient = gradients.primary
 
 // Shadows
-const glowEffect = shadows.nxGreen;    // '0 4px 14px 0 rgba(119, 240, 127, 0.39)'
+const glowEffect = shadows.nxGreen // '0 4px 14px 0 rgba(119, 240, 127, 0.39)'
 ```
 
 ---
@@ -162,6 +154,7 @@ const glowEffect = shadows.nxGreen;    // '0 4px 14px 0 rgba(119, 240, 127, 0.39
 ### Bibliothèque UI (`ui/`)
 
 ✅ **Créés :**
+
 - `src/runtime/utils/designTokens.ts` - Tous les design tokens NxPay
 - `DESIGN_SYSTEM.md` - Documentation design system
 - `MIGRATION_GUIDE.md` - Guide de migration
@@ -169,6 +162,7 @@ const glowEffect = shadows.nxGreen;    // '0 4px 14px 0 rgba(119, 240, 127, 0.39
 - `README_NXPAY.md` - Ce fichier
 
 ✅ **Modifiés :**
+
 - `package.json` - Renommé `@nxpay/ui` v2.0.0
 - `src/runtime/assets/styles/colors.ts` - Nouvelles couleurs NxPay
 - `src/runtime/utils/constants/buttonStyles.ts` - Support couleurs NxPay
@@ -176,6 +170,7 @@ const glowEffect = shadows.nxGreen;    // '0 4px 14px 0 rgba(119, 240, 127, 0.39
 ### Applications Admin & Merchant
 
 ✅ **Modifiés dans les deux :**
+
 - `package.json` - Dépendance `@nxpay/ui@^2.0.0`
 - `nuxt.config.ts` - Module `@nxpay/ui` et safelistColors
 - `tailwind.config.ts` - Palette complète NxPay avec 5 couleurs
@@ -226,9 +221,7 @@ Chaque couleur a 11 nuances (50 à 950) :
 </div>
 
 <!-- Gradient Simple -->
-<div class="bg-gradient-to-r from-nxGreen-500 to-nxTeal-500">
-  Vert vers Teal
-</div>
+<div class="bg-gradient-to-r from-nxGreen-500 to-nxTeal-500">Vert vers Teal</div>
 ```
 
 ---
@@ -241,12 +234,13 @@ Pour faciliter la migration, des **alias** sont disponibles :
 
 ```typescript
 // Ces syntaxes fonctionnent toutes !
-primary: '#77F07F'      // Alias vers nxGreen-500
-secondary: '#3FC995'    // Alias vers nxTeal-500
-tertiary: '#40A0AE'     // Alias vers nxBlueTurquoise-500
+primary: '#77F07F' // Alias vers nxGreen-500
+secondary: '#3FC995' // Alias vers nxTeal-500
+tertiary: '#40A0AE' // Alias vers nxBlueTurquoise-500
 ```
 
 Exemple :
+
 ```vue
 <!-- Les deux fonctionnent -->
 <div class="bg-nxGreen-500">Nouveau</div>
@@ -270,38 +264,39 @@ Consultez le [Guide de Migration](./MIGRATION_GUIDE.md) complet.
 ### Couleurs
 
 ```typescript
-import { colors } from '@nxpay/ui/utils/designTokens';
+import { colors } from '@nxpay/ui/utils/designTokens'
 
-colors.nxGreen          // '#77F07F'
-colors.nxTeal           // '#3FC995'
-colors.nxBlueTurquoise  // '#40A0AE'
-colors.nxBlue           // '#37669C'
-colors.nxPurple         // '#3A2F6B'
+colors.nxGreen // '#77F07F'
+colors.nxTeal // '#3FC995'
+colors.nxBlueTurquoise // '#40A0AE'
+colors.nxBlue // '#37669C'
+colors.nxPurple // '#3A2F6B'
 ```
 
 ### Gradients
 
 ```typescript
-import { gradients } from '@nxpay/ui/utils/designTokens';
+import { gradients } from '@nxpay/ui/utils/designTokens'
 
-gradients.primary       // Gradient signature
-gradients.button        // Pour boutons
-gradients.card          // Pour cards
+gradients.primary // Gradient signature
+gradients.button // Pour boutons
+gradients.card // Pour cards
 ```
 
 ### Shadows
 
 ```typescript
-import { shadows } from '@nxpay/ui/utils/designTokens';
+import { shadows } from '@nxpay/ui/utils/designTokens'
 
-shadows.nxGreen         // Shadow avec glow vert
-shadows.nxTeal          // Shadow avec glow teal
-shadows.glass           // Pour glassmorphism
+shadows.nxGreen // Shadow avec glow vert
+shadows.nxTeal // Shadow avec glow teal
+shadows.glass // Pour glassmorphism
 ```
 
 ### Spacing, Border Radius, etc.
 
 Tous les design tokens sont disponibles :
+
 - `spacing` - Espacements (xs à 4xl)
 - `borderRadius` - Rayons de bordure (sm à full)
 - `typography` - Typographie (font sizes, weights, etc.)
@@ -317,12 +312,7 @@ Tous les design tokens sont disponibles :
 
 ```vue
 <!-- ✅ Bon -->
-<button class="bg-nxGreen-500">      <!-- Primary action -->
-<button class="bg-nxTeal-500">       <!-- Secondary action -->
-<span class="bg-nxBlueTurquoise-100"><!-- Info badge -->
-
-<!-- ❌ À éviter -->
-<button class="bg-nxPurple-500">     <!-- Trop d'accent pour un bouton principal -->
+<button class="bg-nxGreen-500"></button>
 ```
 
 ### 2. Cohérence Visuelle
@@ -398,26 +388,29 @@ Assurez un contraste suffisant (WCAG AA minimum : 4.5:1) :
 Pour commencer à utiliser NxPay dans vos projets :
 
 1. **Installer les dépendances :**
+
    ```bash
    cd admin
    pnpm install
-   
+
    cd ../merchant
    pnpm install
    ```
 
 2. **Rebuild la bibliothèque UI :**
+
    ```bash
    cd ../ui
    pnpm build
    ```
 
 3. **Lancer les applications :**
+
    ```bash
    # Admin
    cd ../admin
    pnpm dev  # Port 3007
-   
+
    # Merchant (dans un autre terminal)
    cd ../merchant
    pnpm dev  # Port 3008
@@ -458,4 +451,3 @@ MIT © 2025 NxPay Team
 Vous disposez maintenant d'un **design system moderne et cohérent** pour vos applications NxPay !
 
 La transformation de NokiPay vers NxPay est **complète et prête pour production**. 🚀
-

@@ -19,10 +19,12 @@ et ce projet adhère au [Versioning Sémantique](https://semver.org/lang/fr/).
 #### Nouvelle Palette de Couleurs
 
 **Couleurs remplacées :**
+
 - ❌ Ancien : Jaune (`#ffdd0f`) comme couleur principale
 - ✅ Nouveau : Vert Clair (`#77F07F`) comme couleur principale
 
 **Nouvelle palette complète :**
+
 1. **Vert Clair** - `#77F07F` (Priorité 1 - Primary)
 2. **Teal** - `#3FC995` (Priorité 2 - Secondary)
 3. **Bleu Turquoise** - `#40A0AE` (Priorité 3 - Tertiary)
@@ -42,6 +44,7 @@ et ce projet adhère au [Versioning Sémantique](https://semver.org/lang/fr/).
 #### Nouvelles Couleurs Tailwind
 
 Ajout des classes Tailwind pour toutes les couleurs NxPay :
+
 - `nxGreen-{50-950}` - Vert principal
 - `nxTeal-{50-950}` - Teal secondaire
 - `nxBlueTurquoise-{50-950}` - Bleu turquoise
@@ -52,10 +55,11 @@ Ajout des classes Tailwind pour toutes les couleurs NxPay :
 
 ```css
 /* Gradient signature NxPay */
-background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+background: linear-gradient(135deg, #77f07f 0%, #3fc995 50%, #40a0ae 100%);
 ```
 
 Variantes disponibles :
+
 - `gradients.primary` - Gradient signature
 - `gradients.vertical` - Gradient vertical
 - `gradients.button` - Gradient pour boutons
@@ -66,12 +70,14 @@ Variantes disponibles :
 #### Composants
 
 **Button :**
+
 - Nouvelle couleur `green` disponible
 - Couleur `yellow` conservée pour compatibilité
 - `primary` pointe maintenant vers `nxGreen-500`
 - Shadow NxPay avec glow vert : `[box-shadow:0_4px_14px_0_rgba(119,240,127,0.39)]`
 
 **Colors :**
+
 - Système de couleurs complètement revu
 - `success` utilise maintenant `nxGreen`
 - `info` utilise maintenant `nxBlueTurquoise`
@@ -79,6 +85,7 @@ Variantes disponibles :
 #### Configuration
 
 **Tailwind :**
+
 - Nouvelles couleurs ajoutées dans `extend.colors`
 - Alias de compatibilité :
   - `primary` → `#77F07F`
@@ -86,6 +93,7 @@ Variantes disponibles :
   - `tertiary` → `#40A0AE`
 
 **Nuxt :**
+
 - `safelistColors` mis à jour avec les 5 couleurs NxPay
 
 ### 📚 Documentation
@@ -109,18 +117,20 @@ Variantes disponibles :
 Pour migrer depuis `@nokipay/ui` v0.2.x :
 
 1. **Installer la nouvelle version :**
+
    ```bash
    pnpm remove @nokipay/ui
    pnpm add @nxpay/ui@^2.0.0
    ```
 
 2. **Mettre à jour les imports :**
+
    ```typescript
    // Avant
-   import { colors } from '@nokipay/ui/utils/colors';
-   
+   import { colors } from '@nokipay/ui/utils/colors'
+
    // Après
-   import { colors } from '@nxpay/ui/utils/designTokens';
+   import { colors } from '@nxpay/ui/utils/designTokens'
    ```
 
 3. **Remplacer les couleurs :**
@@ -195,4 +205,3 @@ Toujours disponible pour compatibilité mais déprécié :
 [0.2.2]: https://github.com/nokipay/ui/releases/tag/v0.2.2
 [0.2.1]: https://github.com/nokipay/ui/releases/tag/v0.2.1
 [0.2.0]: https://github.com/nokipay/ui/releases/tag/v0.2.0
-
