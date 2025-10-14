@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { getImageUrl } from '../assets/images';
+import { ref, onMounted, unref } from 'vue'
+import { getImageUrl } from '../assets/images'
 
-const preloaderRef = ref();
+const preloaderRef = ref()
 
 onMounted(() => {
     const fadeEffect = setInterval(() => {
@@ -67,7 +68,7 @@ onMounted(() => {
 .loader-bar {
     width: 15px;
     height: 100%;
-    background-color: #ffdd0f;
+    background-color: #77F07F;
     border-radius: 3px;
     animation: loader 1.5s ease-in-out infinite;
 }
@@ -95,11 +96,11 @@ onMounted(() => {
 @keyframes loader {
     0%, 100% {
         transform: scaleY(1);
-        background-color: #ffdd0f;
+        background-color: #77F07F;
     }
     50% {
         transform: scaleY(2);
-        background-color: #ffd700;
+        background-color: #3FC995;
     }
 }
 

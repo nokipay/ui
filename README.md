@@ -1,233 +1,131 @@
-# Nuxt UI Library
+# NxPay UI
 
-Une librairie de composants UI pour Nuxt 3.
+> A modern UI library for NxPay Web applications with a beautiful green-to-purple color palette
+
+## Documentation
+
+All documentation is available in the `docs/` folder:
+
+- **[Design System](./docs/DESIGN_SYSTEM.md)** - Complete design system guide
+- **[Installation Guide](./docs/INSTALLATION_GUIDE.md)** - Quick start guide
+- **[Migration Guide](./docs/MIGRATION_GUIDE.md)** - Migrate from NokiPay to NxPay
+- **[Project Setup](./docs/PROJECT_SETUP.md)** - Full project configuration
+- **[Changelog](./docs/CHANGELOG.md)** - Version history
+- **[NxPay README](./docs/README_NXPAY.md)** - Complete French documentation
+
+## Quick Start
+
+```bash
+# Install
+pnpm install
+
+# Development
+pnpm dev              # Playground (port 3000)
+pnpm storybook        # Storybook (port 6006)
+
+# Build
+pnpm build            # Build module
+
+# Tests
+pnpm test             # Run tests
+pnpm test:coverage    # With coverage
+```
+
+## NxPay Color Palette
+
+NxPay uses 5 harmonious colors forming a green-to-purple gradient:
+
+1. **Green** - `#77F07F` (Primary)
+2. **Teal** - `#3FC995` (Secondary)
+3. **Blue Turquoise** - `#40A0AE` (Tertiary)
+4. **Blue** - `#37669C` (Quaternary)
+5. **Purple** - `#3A2F6B` (Accent)
+
+### Signature Gradient
+
+```css
+background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+```
 
 ## Installation
 
 ```bash
-npm install @nokipay/ui
+pnpm add @nxpay/ui
 ```
 
-## Configuration
-
-Ajoutez le module à votre `nuxt.config.ts`:
-
-```ts
-export default defineNuxtConfig({
-  modules: [
-    '@nokipay/ui'
-  ]
-})
-```
-
-## Développement
-
-```bash
-# Installer les dépendances
-npm install
-
-# Développer avec le playground
-npm run dev
-
-# Construire la librairie
-npm run build
-
-# Lancer les tests
-npm run test
-```
-
-## Composants disponibles
-
-### Header (NokiHeader)
+## Usage
 
 ```vue
 <template>
-  <NokiHeader 
-    title="Mon titre" 
-    subtitle="Mon sous-titre"
-    icon="i-heroicons-home"
-    titleSize="2xl"
-    subtitleSize="sm"
-  >
-    <template #right>
-      <Button label="Action" />
-    </template>
-  </NokiHeader>
+  <NokiButton color="primary" label="Click me" />
 </template>
 ```
 
-#### Props
+## Project Structure
 
-- `title`: Titre principal (requis)
-- `subtitle`: Sous-titre optionnel
-- `icon`: Icône à afficher (format Heroicons)
-- `badge`: Badge simple avec label et classe CSS
-- `statusBadge`: Badge de statut avec propriétés avancées
-- `titleSize`: Taille du titre - 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' (défaut: '2xl')
-- `subtitleSize`: Taille du sous-titre - 'xs' | 'sm' | 'md' | 'lg' | 'xl' (défaut: 'sm')
-
-#### Tailles de titre disponibles
-
-- **xs**: `text-xs` (12px)
-- **sm**: `text-sm` (14px) 
-- **md**: `text-base` (16px)
-- **lg**: `text-lg` (18px)
-- **xl**: `text-xl` (20px)
-- **2xl**: `text-2xl` (24px) - Responsive: `md:text-3xl` (30px)
-- **3xl**: `text-3xl` (30px) - Responsive: `md:text-4xl` (36px)
-- **4xl**: `text-4xl` (36px)
-- **5xl**: `text-5xl` (48px)
-
-#### Tailles de sous-titre disponibles
-
-- **xs**: `text-xs` (12px)
-- **sm**: `text-sm` (14px)
-- **md**: `text-base` (16px)
-- **lg**: `text-lg` (18px)
-- **xl**: `text-xl` (20px)
-
-#### Slots
-
-- `#left`: Contenu à gauche du titre
-- `#right`: Contenu à droite du header
-- `#extra`: Contenu supplémentaire sous le sous-titre
-
-### Button
-
-```vue
-<template>
-  <Button variant="primary" size="md" @click="handleClick">
-    Mon bouton
-  </Button>
-</template>
+```
+ui/
+├── docs/                    # Documentation
+├── src/
+│   ├── module.ts           # Module definition
+│   └── runtime/
+│       ├── components/     # Vue components
+│       ├── composables/    # Composables
+│       ├── utils/          # Utilities & Design Tokens
+│       └── assets/         # Assets
+├── playground/             # Nuxt playground
+├── stories/                # Storybook stories
+└── tests/                  # Tests
 ```
 
-#### Props
+## Scripts
 
-- `variant`: 'primary' | 'secondary' | 'outline' (défaut: 'primary')
-- `size`: 'sm' | 'md' | 'lg' (défaut: 'md')
+### Development
 
-#### Events
+- `pnpm dev` - Run playground
+- `pnpm playground` - Playground only
+- `pnpm storybook` - Run Storybook
 
-- `click`: Émis lors du clic sur le bouton
+### Build
 
-### Badge (NokiBadge)
+- `pnpm build` - Build module
+- `pnpm playground:build` - Build playground
+- `pnpm storybook:build` - Build Storybook
 
-```vue
-<template>
-  <!-- Badge avec statut automatique -->
-  <NokiBadge 
-    status="active" 
-    size="md" 
-    variant="soft" 
-  />
-  
-  <!-- Badge avec label personnalisé -->
-  <NokiBadge 
-    label="Personnalisé" 
-    customSize="text-lg px-4 py-2 font-bold" 
-  />
-  
-  <!-- Badge avec type spécifique -->
-  <NokiBadge 
-    :status="true" 
-    type="activeinactive" 
-  />
-</template>
-```
+### Tests
 
-#### Props
+- `pnpm test` - Run tests
+- `pnpm test:watch` - Watch mode
+- `pnpm test:coverage` - With coverage
+- `pnpm test:ui` - UI interface
 
-- `status`: Statut optionnel à afficher (string, number, boolean, null, undefined)
-- `size`: Taille prédéfinie ('sm', 'md', 'lg') - défaut: 'md'
-- `variant`: Style du badge ('solid', 'soft', 'outline') - défaut: 'soft'
-- `className`: Classes CSS personnalisées
-- `label`: Texte personnalisé (recommandé pour un affichage optimal)
-- `customSize`: Classes CSS personnalisées pour la taille (priorité sur size)
-- `color`: Couleur personnalisée ('success', 'warning', 'error', 'info', 'default', 'purple', 'pink', 'orange', 'teal', 'gray', 'red', 'yellow', 'green', 'blue', 'indigo', 'violet') - défaut: 'default'
-- `fontWeight`: Poids de la police ('normal', 'medium', 'semibold', 'bold', 'italic') - défaut: 'medium'
+### Code Quality
 
-#### Utilisation Simplifiée
+- `pnpm lint` - Lint code
+- `pnpm lint:fix` - Fix linting
+- `pnpm format` - Format code
+- `pnpm format:check` - Check formatting
 
-Le composant `NokiBadge` est maintenant simplifié et plus flexible. Il n'y a plus de logique complexe de gestion des types booléens. À la place, vous contrôlez directement l'apparence via les props :
+## Features
 
-```vue
-<!-- Badge simple avec label et couleur -->
-<NokiBadge 
-  label="Actif" 
-  color="success" 
-/>
+- TypeScript support
+- Nuxt 3.15.4 compatible
+- Tailwind CSS integration
+- 55 color shades (5 palettes x 11 shades)
+- Design tokens system
+- Vitest for testing (70% coverage threshold)
+- Storybook 7 for documentation
+- ESLint + Prettier configured
 
-<!-- Badge avec statut et label personnalisé -->
-<NokiBadge 
-  :status="true" 
-  label="Utilisateur connecté" 
-  color="green" 
-  fontWeight="bold" 
-/>
-```
+## License
 
-#### Couleurs par type de statut
+MIT © 2025 NxPay Team
 
-Le composant utilise un système de couleurs basé sur le type de statut :
+## Repository
 
-- **🟢 Vert (succès)**: `success`, `active`, `approved`, `paid`, `online`, `completed`, `true`, `1`
-- **🟡 Jaune (attente)**: `pending`, `unpaid`
-- **🔴 Rouge (erreur)**: `failed`, `rejected`
-- **⚫ Gris (neutre)**: `inactive`, `cancelled`, `offline`, `false`, `0`
-- **🔵 Bleu (défaut)**: Tous les autres statuts
+[https://github.com/nxpay/ui](https://github.com/nxpay/ui)
 
-**Note**: 
-- Tous les badges ont des bords arrondis (`rounded-full`) pour un design moderne
-- Les couleurs sont contrôlées via la prop `color`
-- Les labels sont recommandés pour un affichage optimal
-- Le composant est maintenant plus simple et plus flexible
+---
 
-#### Exemples d'utilisation
-
-```vue
-<!-- Badge simple -->
-<NokiBadge status="pending" />
-
-<!-- Badge avec taille et style personnalisés -->
-<NokiBadge 
-  status="completed" 
-  size="lg" 
-  variant="outline" 
-/>
-
-<!-- Badge avec label personnalisé -->
-<NokiBadge 
-  label="Important" 
-  customSize="text-xl px-6 py-3 font-bold bg-red-100 text-red-800" 
-/>
-
-<!-- Badge avec couleur personnalisée -->
-<NokiBadge 
-  label="Premium" 
-  color="purple" 
-  fontWeight="bold" 
-/>
-
-<!-- Badge avec poids de police personnalisé -->
-<NokiBadge 
-  label="Urgent" 
-  color="red" 
-  fontWeight="semibold" 
-  size="lg" 
-/>
-
-<!-- Badge de statut booléen avec label traduit -->
-<NokiBadge 
-  :status="true" 
-  type="activeinactive" 
-  :label="t('status.active')" 
-/>
-
-<!-- Badge yesno avec label traduit -->
-<NokiBadge 
-  :status="false" 
-  type="yesno" 
-  :label="t('status.no')" 
-/>
-```
+**Version:** 2.0.0  
+**Built with:** Nuxt 3.15.4 + Vue 3.5 + TypeScript 5.7

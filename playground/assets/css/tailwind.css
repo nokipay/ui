@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS NxPay */
+:root {
+  --color-nx-green: #77F07F;
+  --color-nx-teal: #3FC995;
+  --color-nx-blue-turquoise: #40A0AE;
+  --color-nx-blue: #37669C;
+  --color-nx-purple: #3A2F6B;
+  
+  --gradient-primary: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+}
+
+/* Utilities personnalisées */
+@layer utilities {
+  .gradient-nxpay {
+    background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+  }
+  
+  .gradient-nxpay-vertical {
+    background: linear-gradient(180deg, #77F07F 0%, #3FC995 100%);
+  }
+  
+  .shadow-nxpay-green {
+    box-shadow: 0 4px 14px 0 rgba(119, 240, 127, 0.39);
+  }
+  
+  .shadow-nxpay-teal {
+    box-shadow: 0 4px 14px 0 rgba(63, 201, 149, 0.39);
+  }
+}
+

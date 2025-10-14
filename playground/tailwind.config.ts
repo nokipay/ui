@@ -1,0 +1,126 @@
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: [
+    './components/**/*.{vue,js,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './app.vue',
+    '../src/runtime/components/**/*.vue',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Couleurs principales NxPay
+        nxGreen: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#77F07F',
+          500: '#77F07F', // Vert Clair - Priorité 1
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+          950: '#052e16',
+        },
+        nxTeal: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#3FC995',
+          500: '#3FC995', // Teal - Priorité 2
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          950: '#042f2e',
+        },
+        nxBlueTurquoise: {
+          50: '#f0fdff',
+          100: '#cff6fc',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#40A0AE',
+          500: '#40A0AE', // Bleu Turquoise - Priorité 3
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+          950: '#083344',
+        },
+        nxBlue: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#37669C',
+          500: '#37669C', // Bleu Moyen - Priorité 4
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
+        },
+        nxPurple: {
+          50: '#faf5ff',
+          100: '#f3e8ff',
+          200: '#e9d5ff',
+          300: '#d8b4fe',
+          400: '#a78bfa',
+          500: '#3A2F6B', // Violet Foncé - Priorité 5
+          600: '#3A2F6B',
+          700: '#6d28d9',
+          800: '#5b21b6',
+          900: '#4c1d95',
+          950: '#2e1065',
+        },
+
+        // Alias comme palettes complètes pour safelist
+        primary: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#77F07F',
+          500: '#77F07F',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+          950: '#052e16',
+        },
+        secondary: {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#3FC995',
+          500: '#3FC995',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          950: '#042f2e',
+        },
+        tertiary: {
+          50: '#f0fdff',
+          100: '#cff6fc',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#40A0AE',
+          500: '#40A0AE',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+          950: '#083344',
+        },
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config
+

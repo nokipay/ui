@@ -1,0 +1,11 @@
+node_modules
+dist
+.nuxt
+.output
+coverage
+storybook-static
+package-lock.json
+pnpm-lock.yaml
+*.min.js
+*.min.css
+

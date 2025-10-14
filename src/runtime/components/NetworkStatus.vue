@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { getImageUrl } from '../assets/images';
+import { ref, onMounted, onUnmounted } from 'vue'
+import { getImageUrl } from '../assets/images'
 
 const isOnline = ref(true)
 const connectionType = ref('')
