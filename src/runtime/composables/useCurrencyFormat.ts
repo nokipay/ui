@@ -21,12 +21,12 @@ export function useCurrencyFormat() {
       showSymbol: true,
       showCode: false,
       compact: false,
-    }),
+    })
   )
 
   const formatFCFA = (
     amount: number | string | null | undefined,
-    options: CurrencyFormatOptions = {},
+    options: CurrencyFormatOptions = {}
   ): string => {
     if (amount === null || amount === undefined || amount === '') {
       return '-'
@@ -64,15 +64,14 @@ export function useCurrencyFormat() {
       }
 
       return formatted
-    }
- catch (error) {
+    } catch (error) {
       return `${numAmount.toLocaleString('fr-FR')} FCFA`
     }
   }
 
   const formatNumber = (
     amount: number | string | null | undefined,
-    options: { locale?: string, decimals?: number, compact?: boolean } = {},
+    options: { locale?: string; decimals?: number; compact?: boolean } = {}
   ): string => {
     if (amount === null || amount === undefined || amount === '') {
       return '-'
@@ -97,15 +96,14 @@ export function useCurrencyFormat() {
         minimumFractionDigits: decimals,
         maximumFractionDigits: decimals,
       })
-    }
- catch (error) {
+    } catch (error) {
       return numAmount.toFixed(decimals).replace('.', ',')
     }
   }
 
   const formatPercentage = (
     value: number | string | null | undefined,
-    decimals: number = 1,
+    decimals: number = 1
   ): string => {
     if (value === null || value === undefined || value === '') {
       return '-'
@@ -119,15 +117,14 @@ export function useCurrencyFormat() {
 
     try {
       return `${numValue.toFixed(decimals).replace('.', ',')}%`
-    }
- catch (error) {
+    } catch (error) {
       return `${numValue}%`
     }
   }
 
   const formatCompact = (
     amount: number | string | null | undefined,
-    options: CurrencyFormatOptions = {},
+    options: CurrencyFormatOptions = {}
   ): string => {
     if (amount === null || amount === undefined || amount === '') {
       return '-'
@@ -161,8 +158,7 @@ export function useCurrencyFormat() {
       }
 
       return formatted
-    }
- catch (error) {
+    } catch (error) {
       return formatCompactNumber(numAmount, true)
     }
   }
@@ -201,8 +197,7 @@ export function useCurrencyFormat() {
       formatted = formatted.replace('XAF', 'FCFA')
 
       return formatted
-    }
- catch (error) {
+    } catch (error) {
       return `${numAmount.toLocaleString('fr-FR')} FCFA`
     }
   }

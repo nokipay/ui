@@ -103,6 +103,7 @@ pnpm format           # Formater
 Navigation : docs/INDEX.md
 
 Guides principaux :
+
 - INSTALLATION_GUIDE.md
 - DESIGN_SYSTEM.md
 - MIGRATION_GUIDE.md
@@ -161,6 +162,7 @@ pnpm storybook
 LE PROJET NXPAY UI EST TERMINE ET PRET POUR LA PRODUCTION
 
 Tous les objectifs sont atteints :
+
 - Design system moderne
 - Tests complets (93 tests)
 - Documentation exhaustive
@@ -173,4 +175,3 @@ Tous les objectifs sont atteints :
 **Version :** 2.0.0  
 **Qualité :** Production Ready  
 **Tests :** 93/93 (100%)
-

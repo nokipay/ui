@@ -1,5 +1,5 @@
 {
-  "name": "@nokipay/ui-playground",
+  "name": "@nxpay/ui-playground",
   "private": true,
   "scripts": {
     "build": "nuxt build",

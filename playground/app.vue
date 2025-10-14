@@ -22,11 +22,23 @@
             >
               Components
             </NuxtLink>
+            <NuxtLink to="/buttons" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
+              Buttons
+            </NuxtLink>
+            <NuxtLink to="/forms" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
+              Forms
+            </NuxtLink>
+            <NuxtLink
+              to="/gradients"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
+              Gradients
+            </NuxtLink>
             <NuxtLink
               to="/design-tokens"
               class="text-gray-600 hover:text-nxGreen-500 transition-colors"
             >
-              Design Tokens
+              Tokens
             </NuxtLink>
           </nav>
         </div>

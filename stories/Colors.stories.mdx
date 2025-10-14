@@ -1,0 +1,132 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Documentation/Colors" />
+
+# Palette de Couleurs NxPay
+
+NxPay utilise une palette harmonieuse de 5 couleurs formant un gradient du vert au violet.
+
+---
+
+## Couleurs Principales
+
+### 1. Vert Clair (Primary)
+
+**Hex:** `#77F07F`  
+**Usage:** Couleur principale, CTAs, boutons principaux, états de succès
+
+```css
+.bg-nxGreen-500 { background-color: #77F07F; }
+```
+
+### 2. Teal (Secondary)
+
+**Hex:** `#3FC995`  
+**Usage:** Couleur secondaire, accents, liens importants
+
+```css
+.bg-nxTeal-500 { background-color: #3FC995; }
+```
+
+### 3. Bleu Turquoise (Tertiary)
+
+**Hex:** `#40A0AE`  
+**Usage:** Informations, badges informatifs, états
+
+```css
+.bg-nxBlueTurquoise-500 { background-color: #40A0AE; }
+```
+
+### 4. Bleu Moyen (Quaternary)
+
+**Hex:** `#37669C`  
+**Usage:** Navigation, éléments de structure
+
+```css
+.bg-nxBlue-500 { background-color: #37669C; }
+```
+
+### 5. Violet Foncé (Accent)
+
+**Hex:** `#3A2F6B`  
+**Usage:** Accents spéciaux, éléments premium
+
+```css
+.bg-nxPurple-500 { background-color: #3A2F6B; }
+```
+
+---
+
+## Gradient Signature
+
+Le gradient signature NxPay combine les 3 premières couleurs :
+
+```css
+background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+```
+
+---
+
+## Échelle de Teintes
+
+Chaque couleur possède une échelle de 11 teintes (50 à 950) :
+
+- **50-200:** Backgrounds clairs, surfaces
+- **300-400:** Hover states, accents
+- **500:** Couleur principale (standard)
+- **600-700:** Active states, emphasis
+- **800-950:** Textes, éléments sombres
+
+---
+
+## Classes Tailwind
+
+### Background
+
+```html
+<div class="bg-nxGreen-500">Primary Background</div>
+<div class="bg-nxTeal-500">Secondary Background</div>
+<div class="bg-nxBlueTurquoise-500">Tertiary Background</div>
+```
+
+### Text
+
+```html
+<p class="text-nxGreen-600">Primary Text</p>
+<p class="text-nxTeal-600">Secondary Text</p>
+```
+
+### Border
+
+```html
+<div class="border border-nxGreen-500">Primary Border</div>
+```
+
+### Gradients
+
+```html
+<div class="bg-gradient-to-r from-nxGreen-500 to-nxTeal-500">
+  Gradient Background
+</div>
+```
+
+---
+
+## Accessibilité
+
+Ratios de contraste WCAG AA (minimum 4.5:1) :
+
+- Texte foncé sur fond clair : Utiliser 600-900
+- Texte clair sur fond foncé : Utiliser 50-200
+- Toujours tester le contraste
+
+---
+
+## Alias de Compatibilité
+
+```css
+primary: #77F07F    /* = nxGreen-500 */
+secondary: #3FC995  /* = nxTeal-500 */
+tertiary: #40A0AE   /* = nxBlueTurquoise-500 */
+```
+

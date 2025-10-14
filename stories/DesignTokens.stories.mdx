@@ -1,0 +1,220 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Documentation/Design Tokens" />
+
+# Design Tokens NxPay
+
+Documentation complète des design tokens disponibles dans NxPay UI.
+
+---
+
+## Colors
+
+### Couleurs Principales
+
+```typescript
+import { colors } from '@nxpay/ui/utils/designTokens'
+
+colors.nxGreen          // '#77F07F'
+colors.nxTeal           // '#3FC995'
+colors.nxBlueTurquoise  // '#40A0AE'
+colors.nxBlue           // '#37669C'
+colors.nxPurple         // '#3A2F6B'
+```
+
+### Couleurs Sémantiques
+
+```typescript
+colors.success          // '#77F07F' (Vert)
+colors.warning          // '#f59e0b'
+colors.error            // '#ef4444'
+colors.info             // '#40A0AE' (Bleu Turquoise)
+```
+
+### Couleurs Neutres
+
+```typescript
+colors.white            // '#ffffff'
+colors.black            // '#000000'
+colors.gray[50]         // '#f9fafb'
+colors.gray[500]        // '#6b7280'
+colors.gray[900]        // '#111827'
+```
+
+---
+
+## Gradients
+
+```typescript
+import { gradients } from '@nxpay/ui/utils/designTokens'
+
+gradients.primary       // Gradient signature
+gradients.vertical      // Gradient vertical
+gradients.horizontal    // Gradient horizontal
+gradients.button        // Pour boutons
+gradients.card          // Pour cards
+```
+
+### Gradient Signature
+
+```css
+background: linear-gradient(135deg, #77F07F 0%, #3FC995 50%, #40A0AE 100%);
+```
+
+---
+
+## Spacing
+
+```typescript
+import { spacing } from '@nxpay/ui/utils/designTokens'
+
+spacing.xs    // '4px'
+spacing.sm    // '8px'
+spacing.md    // '16px'
+spacing.lg    // '24px'
+spacing.xl    // '32px'
+spacing['2xl'] // '48px'
+spacing['3xl'] // '64px'
+spacing['4xl'] // '96px'
+```
+
+---
+
+## Border Radius
+
+```typescript
+import { borderRadius } from '@nxpay/ui/utils/designTokens'
+
+borderRadius.none  // '0'
+borderRadius.sm    // '8px'
+borderRadius.md    // '12px'
+borderRadius.lg    // '16px'
+borderRadius.xl    // '20px'
+borderRadius['2xl'] // '24px'
+borderRadius['3xl'] // '32px'
+borderRadius.full  // '9999px'
+```
+
+---
+
+## Shadows
+
+```typescript
+import { shadows } from '@nxpay/ui/utils/designTokens'
+
+shadows.sm       // Standard small
+shadows.md       // Standard medium
+shadows.lg       // Standard large
+shadows.xl       // Standard extra large
+shadows['2xl']   // Standard 2xl
+
+// Shadows avec couleurs NxPay
+shadows.nxGreen  // '0 4px 14px 0 rgba(119, 240, 127, 0.39)'
+shadows.nxTeal   // '0 4px 14px 0 rgba(63, 201, 149, 0.39)'
+
+// Glassmorphism
+shadows.glass    // '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+```
+
+---
+
+## Typography
+
+### Font Families
+
+```typescript
+import { typography } from '@nxpay/ui/utils/designTokens'
+
+typography.fontFamily.primary    // 'Poppins, sans-serif'
+typography.fontFamily.secondary  // 'Roboto, sans-serif'
+typography.fontFamily.mono       // 'monospace'
+```
+
+### Font Sizes
+
+```typescript
+typography.fontSize.xs    // '12px'
+typography.fontSize.sm    // '14px'
+typography.fontSize.base  // '16px'
+typography.fontSize.lg    // '18px'
+typography.fontSize.xl    // '20px'
+typography.fontSize['2xl'] // '24px'
+typography.fontSize['6xl'] // '60px'
+```
+
+### Font Weights
+
+```typescript
+typography.fontWeight.light     // '300'
+typography.fontWeight.regular   // '400'
+typography.fontWeight.medium    // '500'
+typography.fontWeight.semibold  // '600'
+typography.fontWeight.bold      // '700'
+```
+
+---
+
+## Breakpoints
+
+```typescript
+import { breakpoints } from '@nxpay/ui/utils/designTokens'
+
+breakpoints.sm     // '640px'
+breakpoints.md     // '768px'
+breakpoints.lg     // '1024px'
+breakpoints.xl     // '1280px'
+breakpoints['2xl'] // '1536px'
+```
+
+---
+
+## Transitions
+
+### Durées
+
+```typescript
+import { transitions } from '@nxpay/ui/utils/designTokens'
+
+transitions.duration.fast    // '150ms'
+transitions.duration.normal  // '300ms'
+transitions.duration.slow    // '500ms'
+```
+
+### Timing Functions
+
+```typescript
+transitions.timing.linear    // 'linear'
+transitions.timing.easeIn    // 'cubic-bezier(0.4, 0, 1, 1)'
+transitions.timing.easeOut   // 'cubic-bezier(0, 0, 0.2, 1)'
+transitions.timing.easeInOut // 'cubic-bezier(0.4, 0, 0.2, 1)'
+```
+
+---
+
+## Utilisation Complète
+
+```typescript
+import {
+  colors,
+  gradients,
+  spacing,
+  borderRadius,
+  shadows,
+  typography,
+  breakpoints,
+  transitions,
+  designTokens
+} from '@nxpay/ui/utils/designTokens'
+
+// Utilisation
+const primaryColor = colors.nxGreen
+const gradient = gradients.primary
+const shadow = shadows.nxGreen
+```
+
+---
+
+## Documentation Complète
+
+Voir [Design System](../docs/DESIGN_SYSTEM.md) pour plus de détails.
+
