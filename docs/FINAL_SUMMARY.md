@@ -325,4 +325,3 @@ Résumé complet :
 **Pages :** 6 playground + 6 stories  
 **Documentation :** 11 guides  
 **Statut :** PRODUCTION READY
-

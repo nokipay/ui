@@ -1,3 +1,3 @@
 export declare function useApiErrorLabel(): {
-    getErrorLabel: (code: string) => string;
-};
+  getErrorLabel: (code: string) => string
+}

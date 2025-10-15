@@ -108,4 +108,3 @@ export const AllColors: Story = {
     `,
   }),
 }
-

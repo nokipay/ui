@@ -1,23 +1,22 @@
 <script setup>
-import { ref, onMounted, watch } from "vue";
-const timer = ref(0);
-const counter = ref(0);
-const current_load = ref("D\xE9but du chargement");
+import { ref, onMounted, watch } from 'vue'
+const timer = ref(0)
+const counter = ref(0)
+const current_load = ref('D\xE9but du chargement')
 function update(value) {
-  timer.value += 6.67;
-  counter.value++;
-  current_load.value = `Chargement des ${value}`;
+  timer.value += 6.67
+  counter.value++
+  current_load.value = `Chargement des ${value}`
 }
-async function init() {
-}
+async function init() {}
 onMounted(() => {
-  init();
-});
+  init()
+})
 watch(timer, () => {
   if (timer.value > 100) {
-    timer.value = 0;
+    timer.value = 0
   }
-});
+})
 </script>
 
 <template>

@@ -1,42 +1,42 @@
 <script setup>
-import { computed } from "vue";
+import { computed } from 'vue'
 const props = defineProps({
   title: { type: String, required: true },
   subtitle: { type: String, required: false },
   icon: { type: String, required: false },
   badge: { type: Object, required: false },
   statusBadge: { type: Object, required: false },
-  titleSize: { type: String, required: false, default: "2xl" },
-  subtitleSize: { type: String, required: false, default: "sm" }
-});
+  titleSize: { type: String, required: false, default: '2xl' },
+  subtitleSize: { type: String, required: false, default: 'sm' },
+})
 const titleSizeClasses = {
-  xs: "text-xs",
-  sm: "text-sm",
-  md: "text-base",
-  lg: "text-lg",
-  xl: "text-xl",
-  "2xl": "text-2xl",
-  "3xl": "text-3xl",
-  "4xl": "text-4xl",
-  "5xl": "text-5xl"
-};
+  xs: 'text-xs',
+  sm: 'text-sm',
+  md: 'text-base',
+  lg: 'text-lg',
+  xl: 'text-xl',
+  '2xl': 'text-2xl',
+  '3xl': 'text-3xl',
+  '4xl': 'text-4xl',
+  '5xl': 'text-5xl',
+}
 const subtitleSizeClasses = {
-  xs: "text-xs",
-  sm: "text-sm",
-  md: "text-base",
-  lg: "text-lg",
-  xl: "text-xl"
-};
+  xs: 'text-xs',
+  sm: 'text-sm',
+  md: 'text-base',
+  lg: 'text-lg',
+  xl: 'text-xl',
+}
 const titleClasses = computed(() => {
-  const baseSize = titleSizeClasses[props.titleSize];
-  if (props.titleSize === "2xl") {
-    return `${baseSize} md:text-3xl`;
+  const baseSize = titleSizeClasses[props.titleSize]
+  if (props.titleSize === '2xl') {
+    return `${baseSize} md:text-3xl`
   }
-  if (props.titleSize === "3xl") {
-    return `${baseSize} md:text-4xl`;
+  if (props.titleSize === '3xl') {
+    return `${baseSize} md:text-4xl`
   }
-  return baseSize;
-});
+  return baseSize
+})
 </script>
 
 <template>

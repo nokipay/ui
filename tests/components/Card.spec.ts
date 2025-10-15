@@ -88,4 +88,3 @@ describe('Card Component', () => {
     expect(wrapper.html()).toBeDefined()
   })
 })
-

@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from "vue";
-const isVisible = ref(false);
+import { ref } from 'vue'
+const isVisible = ref(false)
 const open = () => {
-  isVisible.value = true;
-};
+  isVisible.value = true
+}
 const close = () => {
-  isVisible.value = false;
-};
+  isVisible.value = false
+}
 defineExpose({
   open,
-  close
-});
+  close,
+})
 </script>
 
 <template>

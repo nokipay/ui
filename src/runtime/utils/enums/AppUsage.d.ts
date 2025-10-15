@@ -1,5 +1,5 @@
 export declare enum appUsage {
-    mobile = "mobile",
-    back = "back",
-    both = "both"
+  mobile = 'mobile',
+  back = 'back',
+  both = 'both',
 }

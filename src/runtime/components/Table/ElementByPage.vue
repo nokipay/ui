@@ -1,6 +1,6 @@
 <script setup>
-const pageCount = defineModel({ type: [String, Number] });
-const options = ["5", "10", "15", "20", "25", "50", "100"];
+const pageCount = defineModel({ type: [String, Number] })
+const options = ['5', '10', '15', '20', '25', '50', '100']
 </script>
 
 <template>

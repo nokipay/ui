@@ -419,4 +419,3 @@ Propriétaire - NxPay © 2025
 **Version :** 2.0.0  
 **Dernière mise à jour :** Octobre 2025  
 **Mainteneur :** Équipe Design NxPay
-

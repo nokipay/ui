@@ -27,6 +27,12 @@ export { default as TableElementByPage } from './Table/ElementByPage.vue'
 export { default as TablePaginationInfo } from './Table/PaginationInfo.vue'
 export { default as TableWrapper } from './Table/Wrapper.vue'
 
+// Navigation components
+export { default as NavigationLink } from './Navigation/Link/index.vue'
+export { default as NavigationSidebar } from './Navigation/Sidebar/index.vue'
+export { default as NavigationSidebarMobile } from './Navigation/Sidebar/Mobile.vue'
+export { default as NavigationNavbar } from './Navigation/Navbar/index.vue'
+
 // Standalone components
 export { default as InitData } from './InitData.vue'
 export { default as NetworkStatus } from './NetworkStatus.vue'

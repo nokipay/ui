@@ -1,2 +1,2 @@
-export const Timeout = 1e3;
-export const ToastTimeout = 1500;
+export const Timeout = 1e3
+export const ToastTimeout = 1500

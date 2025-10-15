@@ -1,164 +1,190 @@
 <script setup>
-import { ref, computed, watch, onUnmounted } from "vue";
+import { ref, computed, watch, onUnmounted } from 'vue'
 const props = defineProps({
   acceptFormats: { type: Array, required: false, default: () => [] },
   maxSize: { type: Number, required: false, default: 10240 },
   multiple: { type: Boolean, required: false, default: false },
-  placeholder: { type: String, required: false, default: "Cliquez pour s\xE9lectionner un fichier" },
-  previewSize: { type: String, required: false, default: "w-40 h-40" },
-  showPreview: { type: Boolean, required: false, default: true }
-});
-const files = defineModel({ type: null });
-const fileInputRef = ref(null);
-const previewUrls = ref([]);
-const errorMessage = ref("");
-const isDragOver = ref(false);
+  placeholder: {
+    type: String,
+    required: false,
+    default: 'Cliquez pour s\xE9lectionner un fichier',
+  },
+  previewSize: { type: String, required: false, default: 'w-40 h-40' },
+  showPreview: { type: Boolean, required: false, default: true },
+})
+const files = defineModel({ type: null })
+const fileInputRef = ref(null)
+const previewUrls = ref([])
+const errorMessage = ref('')
+const isDragOver = ref(false)
 const acceptString = computed(() => {
-  return props.acceptFormats.length > 0 ? props.acceptFormats.join(",") : "*/*";
-});
+  return props.acceptFormats.length > 0 ? props.acceptFormats.join(',') : '*/*'
+})
 function isImageFile(file) {
-  return file.type.startsWith("image/");
+  return file.type.startsWith('image/')
 }
 function getFileIcon(file) {
-  const type = file.type.toLowerCase();
-  const extension = file.name.split(".").pop()?.toLowerCase();
-  if (type.startsWith("image/")) {
-    return "heroicons:photo";
+  const type = file.type.toLowerCase()
+  const extension = file.name.split('.').pop()?.toLowerCase()
+  if (type.startsWith('image/')) {
+    return 'heroicons:photo'
   }
-  if (type === "application/pdf") {
-    return "heroicons:document-text";
+  if (type === 'application/pdf') {
+    return 'heroicons:document-text'
   }
-  if (type.includes("word") || extension === "doc" || extension === "docx") {
-    return "heroicons:document-text";
+  if (type.includes('word') || extension === 'doc' || extension === 'docx') {
+    return 'heroicons:document-text'
   }
-  if (type.includes("sheet") || extension === "xls" || extension === "xlsx" || extension === "csv") {
-    return "heroicons:table-cells";
+  if (
+    type.includes('sheet') ||
+    extension === 'xls' ||
+    extension === 'xlsx' ||
+    extension === 'csv'
+  ) {
+    return 'heroicons:table-cells'
   }
-  if (type.includes("presentation") || extension === "ppt" || extension === "pptx") {
-    return "heroicons:presentation-chart-bar";
+  if (type.includes('presentation') || extension === 'ppt' || extension === 'pptx') {
+    return 'heroicons:presentation-chart-bar'
   }
-  if (type.includes("zip") || type.includes("rar") || extension === "zip" || extension === "rar" || extension === "7z") {
-    return "heroicons:archive-box";
+  if (
+    type.includes('zip') ||
+    type.includes('rar') ||
+    extension === 'zip' ||
+    extension === 'rar' ||
+    extension === '7z'
+  ) {
+    return 'heroicons:archive-box'
   }
-  if (type.startsWith("video/")) {
-    return "heroicons:video-camera";
+  if (type.startsWith('video/')) {
+    return 'heroicons:video-camera'
   }
-  if (type.startsWith("audio/")) {
-    return "heroicons:musical-note";
+  if (type.startsWith('audio/')) {
+    return 'heroicons:musical-note'
   }
-  if (extension === "js" || extension === "ts" || extension === "html" || extension === "css" || extension === "vue" || extension === "php" || extension === "py" || extension === "java") {
-    return "heroicons:code-bracket";
+  if (
+    extension === 'js' ||
+    extension === 'ts' ||
+    extension === 'html' ||
+    extension === 'css' ||
+    extension === 'vue' ||
+    extension === 'php' ||
+    extension === 'py' ||
+    extension === 'java'
+  ) {
+    return 'heroicons:code-bracket'
   }
-  if (type.startsWith("text/") || extension === "txt") {
-    return "heroicons:document";
+  if (type.startsWith('text/') || extension === 'txt') {
+    return 'heroicons:document'
   }
-  return "heroicons:document";
+  return 'heroicons:document'
 }
 function formatFileSize(bytes) {
-  if (bytes === 0) return "0 Bytes";
-  const k = 1024;
-  const sizes = ["Bytes", "Ko", "Mo", "Go"];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+  if (bytes === 0) return '0 Bytes'
+  const k = 1024
+  const sizes = ['Bytes', 'Ko', 'Mo', 'Go']
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]
 }
 function validateFile(file) {
   if (props.acceptFormats.length > 0 && !props.acceptFormats.includes(file.type)) {
-    const extensions = props.acceptFormats.map((format) => {
-      if (format === "application/pdf") return "PDF";
-      if (format.includes("word")) return "Word";
-      if (format.includes("sheet")) return "Excel";
-      if (format.startsWith("image/")) return "Image";
-      return format;
-    }).join(", ");
-    return `Le format ${file.type} n'est pas accept\xE9. Formats autoris\xE9s : ${extensions}`;
+    const extensions = props.acceptFormats
+      .map((format) => {
+        if (format === 'application/pdf') return 'PDF'
+        if (format.includes('word')) return 'Word'
+        if (format.includes('sheet')) return 'Excel'
+        if (format.startsWith('image/')) return 'Image'
+        return format
+      })
+      .join(', ')
+    return `Le format ${file.type} n'est pas accept\xE9. Formats autoris\xE9s : ${extensions}`
   }
   if (file.size > props.maxSize * 1024) {
-    return `La taille du fichier (${formatFileSize(file.size)}) d\xE9passe la limite de ${formatFileSize(props.maxSize * 1024)}`;
+    return `La taille du fichier (${formatFileSize(file.size)}) d\xE9passe la limite de ${formatFileSize(props.maxSize * 1024)}`
   }
-  return null;
+  return null
 }
 function processFiles(fileList) {
-  const selectedFiles = Array.from(fileList);
-  errorMessage.value = "";
+  const selectedFiles = Array.from(fileList)
+  errorMessage.value = ''
   for (const file of selectedFiles) {
-    const error = validateFile(file);
+    const error = validateFile(file)
     if (error) {
-      errorMessage.value = error;
-      return;
+      errorMessage.value = error
+      return
     }
   }
-  previewUrls.value.forEach((url) => URL.revokeObjectURL(url));
+  previewUrls.value.forEach((url) => URL.revokeObjectURL(url))
   previewUrls.value = selectedFiles.map((file) => {
-    return isImageFile(file) ? URL.createObjectURL(file) : "";
-  });
+    return isImageFile(file) ? URL.createObjectURL(file) : ''
+  })
   if (props.multiple) {
-    files.value = selectedFiles;
+    files.value = selectedFiles
   } else {
-    files.value = selectedFiles[0] || null;
+    files.value = selectedFiles[0] || null
   }
 }
 function handleFileSelection(event) {
-  const target = event.target;
+  const target = event.target
   if (target.files) {
-    processFiles(target.files);
+    processFiles(target.files)
   }
 }
 function handleDragOver(event) {
-  event.preventDefault();
-  isDragOver.value = true;
+  event.preventDefault()
+  isDragOver.value = true
 }
 function handleDragLeave(event) {
-  event.preventDefault();
-  isDragOver.value = false;
+  event.preventDefault()
+  isDragOver.value = false
 }
 function handleDrop(event) {
-  event.preventDefault();
-  isDragOver.value = false;
+  event.preventDefault()
+  isDragOver.value = false
   if (event.dataTransfer?.files) {
-    processFiles(event.dataTransfer.files);
+    processFiles(event.dataTransfer.files)
   }
 }
 function removeFile(index) {
-  if (typeof index === "number" && props.multiple && Array.isArray(files.value)) {
-    const currentFiles = [...files.value];
-    currentFiles.splice(index, 1);
-    files.value = currentFiles.length > 0 ? currentFiles : null;
+  if (typeof index === 'number' && props.multiple && Array.isArray(files.value)) {
+    const currentFiles = [...files.value]
+    currentFiles.splice(index, 1)
+    files.value = currentFiles.length > 0 ? currentFiles : null
     if (previewUrls.value[index]) {
-      URL.revokeObjectURL(previewUrls.value[index]);
+      URL.revokeObjectURL(previewUrls.value[index])
     }
-    previewUrls.value.splice(index, 1);
+    previewUrls.value.splice(index, 1)
   } else {
     previewUrls.value.forEach((url) => {
-      if (url) URL.revokeObjectURL(url);
-    });
-    previewUrls.value = [];
-    files.value = null;
-    errorMessage.value = "";
+      if (url) URL.revokeObjectURL(url)
+    })
+    previewUrls.value = []
+    files.value = null
+    errorMessage.value = ''
     if (fileInputRef.value) {
-      fileInputRef.value.value = "";
+      fileInputRef.value.value = ''
     }
   }
 }
 function triggerFileSelect() {
-  fileInputRef.value?.click();
+  fileInputRef.value?.click()
 }
 const filesArray = computed(() => {
-  if (!files.value) return [];
-  return Array.isArray(files.value) ? files.value : [files.value];
-});
+  if (!files.value) return []
+  return Array.isArray(files.value) ? files.value : [files.value]
+})
 watch(files, (newValue) => {
   if (newValue === null || newValue === void 0) {
     previewUrls.value.forEach((url) => {
-      if (url) URL.revokeObjectURL(url);
-    });
-    previewUrls.value = [];
+      if (url) URL.revokeObjectURL(url)
+    })
+    previewUrls.value = []
   }
-});
+})
 onUnmounted(() => {
   previewUrls.value.forEach((url) => {
-    if (url) URL.revokeObjectURL(url);
-  });
-});
+    if (url) URL.revokeObjectURL(url)
+  })
+})
 </script>
 
 <template>
@@ -167,10 +193,10 @@ onUnmounted(() => {
     <div
       class="relative border-2 border-dashed rounded-lg p-6 transition-colors duration-200"
       :class="{
-  'border-primary-400 bg-primary-50': isDragOver,
-  'border-gray-300 hover:border-gray-400': !isDragOver,
-  'border-red-300': errorMessage
-}"
+        'border-primary-400 bg-primary-50': isDragOver,
+        'border-gray-300 hover:border-gray-400': !isDragOver,
+        'border-red-300': errorMessage,
+      }"
       @dragover="handleDragOver"
       @dragleave="handleDragLeave"
       @drop="handleDrop"
@@ -186,11 +212,11 @@ onUnmounted(() => {
         </div>
         <p class="text-sm text-gray-600 mb-2">{{ placeholder }}</p>
         <p class="text-xs text-gray-500">
-          ou glissez-déposez {{ props.multiple ? "vos fichiers" : "votre fichier" }} ici
+          ou glissez-déposez {{ props.multiple ? 'vos fichiers' : 'votre fichier' }} ici
         </p>
         <p class="text-xs text-gray-400 mt-2">
           <span v-if="props.acceptFormats.length > 0">
-            Formats acceptés : {{ props.acceptFormats.join(", ") }}<br />
+            Formats acceptés : {{ props.acceptFormats.join(', ') }}<br />
           </span>
           <span v-else> Tous types de fichiers acceptés<br /> </span>
           Taille max : {{ formatFileSize(props.maxSize * 1024) }}
@@ -321,8 +347,8 @@ onUnmounted(() => {
     >
       <p class="text-sm text-green-600 flex items-center">
         <UIcon name="heroicons:check-circle" class="w-4 h-4 mr-2" />
-        {{ filesArray.length }} fichier{{ filesArray.length > 1 ? "s" : "" }} sélectionné{{
-          filesArray.length > 1 ? "s" : ""
+        {{ filesArray.length }} fichier{{ filesArray.length > 1 ? 's' : '' }} sélectionné{{
+          filesArray.length > 1 ? 's' : ''
         }}
         <span class="ml-2 text-xs">
           ({{ formatFileSize(filesArray.reduce((total, file2) => total + file2.size, 0)) }})

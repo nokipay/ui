@@ -1,1 +1,1 @@
-export declare const useCustomConfirm: () => any;
+export declare const useCustomConfirm: () => any

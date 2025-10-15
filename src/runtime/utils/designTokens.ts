@@ -360,4 +360,3 @@ export type ComponentSizes = typeof componentSizes
 export type IconSizes = typeof iconSizes
 export type Glassmorphism = typeof glassmorphism
 export type Animations = typeof animations
-

@@ -29,6 +29,18 @@
               Forms
             </NuxtLink>
             <NuxtLink
+              to="/form-wrapper-demo"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
+              FormWrapper
+            </NuxtLink>
+            <NuxtLink
+              to="/navigation-demo"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
+              Navigation
+            </NuxtLink>
+            <NuxtLink
               to="/gradients"
               class="text-gray-600 hover:text-nxGreen-500 transition-colors"
             >

@@ -61,4 +61,3 @@ describe('Confirm Component', () => {
     expect(wrapper.html()).toBeDefined()
   })
 })
-

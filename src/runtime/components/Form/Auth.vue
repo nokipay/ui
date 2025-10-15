@@ -1,11 +1,11 @@
 <script setup>
-import { getImageUrl } from "../../assets/images";
+import { getImageUrl } from '../../assets/images'
 defineProps({
   successMessage: { type: String, required: false },
   errorsMessage: { type: String, required: true },
   errorMessage: { type: String, required: true },
-  title: { type: String, required: true }
-});
+  title: { type: String, required: true },
+})
 </script>
 
 <template>

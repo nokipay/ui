@@ -11,19 +11,24 @@ Le serveur de développement fonctionne ! Voici comment explorer tout ce qui a �
 ### Pages Disponibles
 
 #### 1. Accueil
+
 http://localhost:3000/
+
 - Palette de 5 couleurs NxPay
 - Statistiques du projet
 - Navigation
 
 #### 2. Tous les Composants
+
 http://localhost:3000/components
+
 - **20+ composants** organisés en 8 sections
 - Navigation rapide par ancres
 - Démos interactives
 - Code snippets pour chaque composant
 
 Sections :
+
 - Buttons (6 couleurs)
 - Badges (variants soft, solid, outline)
 - Cards (3 styles)
@@ -33,7 +38,9 @@ Sections :
 - Utility (4 composants : Preloader, NetworkStatus, InitData, Header)
 
 #### 3. Boutons
+
 http://localhost:3000/buttons
+
 - 6 couleurs détaillées
 - Shadows (dark, soft)
 - États (normal, loading)
@@ -41,14 +48,18 @@ http://localhost:3000/buttons
 - Sur fond foncé
 
 #### 4. Formulaires
+
 http://localhost:3000/forms
+
 - Formulaire complet interactif
 - États des inputs
 - Validation visuelle
 - Soumission avec feedback
 
 #### 5. Gradients
+
 http://localhost:3000/gradients
+
 - Gradient signature (135deg)
 - Gradient vertical
 - 4 gradients personnalisés
@@ -57,7 +68,9 @@ http://localhost:3000/gradients
 - Code CSS pour chaque gradient
 
 #### 6. Design Tokens
+
 http://localhost:3000/design-tokens
+
 - Gradients
 - Shadows
 - Border radius
@@ -80,11 +93,13 @@ pnpm storybook
 ### Stories Disponibles
 
 #### Documentation
+
 - Introduction
 - Colors (palette complète)
 - Design Tokens (tous les tokens)
 
 #### Components
+
 - Button (8 variantes)
 - Badge (10+ variantes)
 - Card (5 variantes)
@@ -96,14 +111,17 @@ pnpm storybook
 ### Liste Complète (20+)
 
 **Boutons & Actions**
+
 - Button (6 couleurs)
 - ButtonAction
 
 **Badges & Cards**
+
 - Badge (3 variants, 3 tailles)
 - Card (stats, montants)
 
 **Formulaires**
+
 - FormWrapper
 - FormAuth
 - FormInput
@@ -112,16 +130,19 @@ pnpm storybook
 - Form (base)
 
 **Tables**
+
 - TableWrapper
 - ElementByPage
 - PaginationInfo
 - Table (base)
 
 **Modals**
+
 - Confirm
 - ConfirmDialog
 
 **Utility**
+
 - Preloader
 - NetworkStatus
 - InitData
@@ -154,9 +175,7 @@ pnpm storybook
 ### Gradient Signature
 
 ```html
-<div class="gradient-nxpay">
-  Gradient NxPay
-</div>
+<div class="gradient-nxpay">Gradient NxPay</div>
 ```
 
 ---
@@ -219,5 +238,3 @@ pnpm build        # Build module
 **Date :** 14 Octobre 2025  
 **Version :** 2.0.0  
 **Status :** Running on port 3000
-
-

@@ -8,6 +8,7 @@
 ## SERVEURS ACTIFS
 
 ### Playground
+
 ```
 ✓ URL : http://localhost:3000
 ✓ Status : Running
@@ -16,6 +17,7 @@
 ```
 
 ### Storybook
+
 ```
 ⚠ URL : http://localhost:6006
 ⚠ Status : Démarre avec warning React (non-bloquant)
@@ -37,6 +39,7 @@ Duration : ~28 secondes
 **TOUS LES TESTS PASSENT !**
 
 Warnings Vue (non-bloquants) :
+
 - Missing required props dans tests (normal)
 - Failed to resolve components (stubs configurés)
 
@@ -72,31 +75,37 @@ Warnings Vue (non-bloquants) :
 ## PAGES PLAYGROUND ACTIVES
 
 ### 1. Accueil (/)
+
 - Palette de couleurs
 - Statistiques
 - Navigation
 
 ### 2. Components (/components)
+
 - 20+ composants organisés
 - 8 sections avec navigation
 - Code snippets
 
 ### 3. Buttons (/buttons)
+
 - 6 couleurs
 - États et shadows
 - Groupes
 
 ### 4. Forms (/forms)
+
 - Formulaire complet
 - États des inputs
 - Interactif
 
 ### 5. Gradients (/gradients)
+
 - 8+ gradients
 - Code CSS
 - Transparences
 
 ### 6. Design Tokens (/design-tokens)
+
 - Gradients
 - Shadows
 - Typography
@@ -106,16 +115,19 @@ Warnings Vue (non-bloquants) :
 ## STORYBOOK STORIES
 
 ### Documentation
+
 1. Introduction
 2. Colors
 3. Design Tokens
 
 ### Components
+
 4. Button (8 variantes)
 5. Badge (10+ variantes)
 6. Card (5 variantes)
 
 **Note Storybook :** Le warning React est pour addon-docs qui nécessite React. Vous pouvez :
+
 - Ignorer (non-bloquant)
 - Installer React : `npm add react react-dom --save-dev`
 - Désactiver addon-docs dans `.storybook/main.ts`
@@ -127,14 +139,17 @@ Warnings Vue (non-bloquants) :
 ### Total : 20+ Composants
 
 **Boutons & Actions (2)**
+
 - Button
 - ButtonAction
 
 **Badges & Cards (2)**
+
 - Badge
 - Card
 
 **Formulaires (6)**
+
 - FormWrapper
 - FormAuth
 - FormInput
@@ -143,16 +158,19 @@ Warnings Vue (non-bloquants) :
 - Form
 
 **Tables (4)**
+
 - TableWrapper
 - ElementByPage
 - PaginationInfo
 - Table
 
 **Modals (2)**
+
 - Confirm
 - ConfirmDialog
 
 **Utility (4)**
+
 - Preloader
 - NetworkStatus
 - InitData
@@ -249,4 +267,3 @@ Storybook : http://localhost:6006 (si lancé)
 **Version :** 2.0.0  
 **Tests :** 93/93 (100%)  
 **Serveurs :** Playground running, Storybook ready
-

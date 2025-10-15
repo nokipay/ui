@@ -1,3 +1,3 @@
 export const useCustomConfirm = () => {
-  return inject("confirm");
-};
+  return inject('confirm')
+}
