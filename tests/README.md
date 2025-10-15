@@ -178,3 +178,4 @@ global: {
 
 **Coverage Actuel :** À calculer avec `pnpm test:coverage`  
 **Objectif :** 70% minimum
+

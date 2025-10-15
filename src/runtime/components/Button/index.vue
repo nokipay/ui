@@ -1,39 +1,28 @@
-<script setup lang="ts">
-import { computed } from 'vue'
+<script setup>
+import { computed } from "vue";
 import {
   BUTTON_BASE_CLASSES,
   BUTTON_COLOR_STYLES,
-  BUTTON_SHADOW_STYLES,
-  type ButtonColor,
-  type ButtonShadowType,
-} from '../../utils/constants/buttonStyles'
-
-interface ButtonProps {
-  label: string
-  icon?: string
-  type?: 'button' | 'submit' | 'reset'
-  color?: ButtonColor
-  variant?: 'outline' | 'solid'
-  size?: 'sm' | 'md' | 'lg'
-  loading?: boolean
-  onClick?: () => void
-  shadowType?: ButtonShadowType
-}
-
-const props = defineProps<ButtonProps>()
-
+  BUTTON_SHADOW_STYLES
+} from "../../utils/constants/buttonStyles";
+const props = defineProps({
+  label: { type: String, required: true },
+  icon: { type: String, required: false },
+  type: { type: String, required: false },
+  color: { type: String, required: false },
+  variant: { type: String, required: false },
+  size: { type: String, required: false },
+  loading: { type: Boolean, required: false },
+  onClick: { type: Function, required: false },
+  shadowType: { type: String, required: false }
+});
 const buttonClasses = computed(() => {
-  const color = props.color || 'black'
-  const shadowType = props.shadowType || 'soft'
-
-  const colorClass = props.loading
-    ? BUTTON_COLOR_STYLES[color].loading
-    : BUTTON_COLOR_STYLES[color].normal
-
-  const shadowClass = BUTTON_SHADOW_STYLES[shadowType][color]
-
-  return [BUTTON_BASE_CLASSES, colorClass, shadowClass].join(' ')
-})
+  const color = props.color || "black";
+  const shadowType = props.shadowType || "soft";
+  const colorClass = props.loading ? BUTTON_COLOR_STYLES[color].loading : BUTTON_COLOR_STYLES[color].normal;
+  const shadowClass = BUTTON_SHADOW_STYLES[shadowType][color];
+  return [BUTTON_BASE_CLASSES, colorClass, shadowClass].join(" ");
+});
 </script>
 
 <template>

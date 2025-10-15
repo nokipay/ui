@@ -1,69 +1,42 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-
-interface Badge {
-  label: string
-  class?: string
-}
-
-interface StatusBadgeProps {
-  status: string | number | boolean | null | undefined
-  size?: 'sm' | 'md' | 'lg'
-  variant?: 'solid' | 'soft' | 'outline'
-  className?: string
-}
-
-interface Props {
-  title: string
-  subtitle?: string
-  icon?: string
-  badge?: Badge
-  statusBadge?: StatusBadgeProps
-  titleSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl'
-  subtitleSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  titleSize: '2xl',
-  subtitleSize: 'sm',
-})
-
-// Map des tailles de titre
+<script setup>
+import { computed } from "vue";
+const props = defineProps({
+  title: { type: String, required: true },
+  subtitle: { type: String, required: false },
+  icon: { type: String, required: false },
+  badge: { type: Object, required: false },
+  statusBadge: { type: Object, required: false },
+  titleSize: { type: String, required: false, default: "2xl" },
+  subtitleSize: { type: String, required: false, default: "sm" }
+});
 const titleSizeClasses = {
-  xs: 'text-xs',
-  sm: 'text-sm',
-  md: 'text-base',
-  lg: 'text-lg',
-  xl: 'text-xl',
-  '2xl': 'text-2xl',
-  '3xl': 'text-3xl',
-  '4xl': 'text-4xl',
-  '5xl': 'text-5xl',
-}
-
-// Map des tailles de sous-titre
+  xs: "text-xs",
+  sm: "text-sm",
+  md: "text-base",
+  lg: "text-lg",
+  xl: "text-xl",
+  "2xl": "text-2xl",
+  "3xl": "text-3xl",
+  "4xl": "text-4xl",
+  "5xl": "text-5xl"
+};
 const subtitleSizeClasses = {
-  xs: 'text-xs',
-  sm: 'text-sm',
-  md: 'text-base',
-  lg: 'text-lg',
-  xl: 'text-xl',
-}
-
-// Classes de titre avec responsive pour les tailles par défaut
+  xs: "text-xs",
+  sm: "text-sm",
+  md: "text-base",
+  lg: "text-lg",
+  xl: "text-xl"
+};
 const titleClasses = computed(() => {
-  const baseSize = titleSizeClasses[props.titleSize]
-
-  // Pour les tailles par défaut (2xl, 3xl), ajouter le responsive
-  if (props.titleSize === '2xl') {
-    return `${baseSize} md:text-3xl`
+  const baseSize = titleSizeClasses[props.titleSize];
+  if (props.titleSize === "2xl") {
+    return `${baseSize} md:text-3xl`;
   }
-  if (props.titleSize === '3xl') {
-    return `${baseSize} md:text-4xl`
+  if (props.titleSize === "3xl") {
+    return `${baseSize} md:text-4xl`;
   }
-
-  return baseSize
-})
+  return baseSize;
+});
 </script>
 
 <template>

@@ -5,11 +5,10 @@
   </div>
 </template>
 
-<script lang="ts">
-// Re-export form components for convenience
-export { default as FormAuth } from './Auth.vue'
-export { default as FormFileUploader } from './FileUploader.vue'
-export { default as FormInput } from './Input.vue'
-export { default as FormPhoneInput } from './PhoneInput.vue'
-export { default as FormWrapper } from './Wrapper.vue'
+<script>
+export { default as FormAuth } from "./Auth.vue";
+export { default as FormFileUploader } from "./FileUploader.vue";
+export { default as FormInput } from "./Input.vue";
+export { default as FormPhoneInput } from "./PhoneInput.vue";
+export { default as FormWrapper } from "./Wrapper.vue";
 </script>

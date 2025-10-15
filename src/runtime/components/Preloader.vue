@@ -1,25 +1,22 @@
-<script setup lang="ts">
-import { ref, onMounted, unref } from 'vue'
-import { getImageUrl } from '../assets/images'
-
-const preloaderRef = ref()
-
+<script setup>
+import { ref, onMounted, unref } from "vue";
+import { getImageUrl } from "../assets/images";
+const preloaderRef = ref();
 onMounted(() => {
   const fadeEffect = setInterval(() => {
     if (unref(preloaderRef)) {
       if (!unref(preloaderRef).style.opacity) {
-        unref(preloaderRef).style.opacity = 1
+        unref(preloaderRef).style.opacity = 1;
       }
-
       if (unref(preloaderRef).style.opacity > 0) {
-        unref(preloaderRef).style.opacity -= 0.1
+        unref(preloaderRef).style.opacity -= 0.1;
       } else {
-        clearInterval(fadeEffect)
-        unref(preloaderRef).classList.add('hide')
+        clearInterval(fadeEffect);
+        unref(preloaderRef).classList.add("hide");
       }
     }
-  }, 300)
-})
+  }, 300);
+});
 </script>
 
 <template>
@@ -46,78 +43,5 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.hide {
-  display: none !important;
-}
-
-.loader-container {
-  width: 200px;
-  height: 60px;
-  position: relative;
-}
-
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.loader-bar {
-  width: 15px;
-  height: 100%;
-  background-color: #77f07f;
-  border-radius: 3px;
-  animation: loader 1.5s ease-in-out infinite;
-}
-
-.loader-bar:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.loader-bar:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.loader-bar:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.loader-bar:nth-child(4) {
-  animation-delay: 0.45s;
-}
-
-.loader-bar:nth-child(5) {
-  animation-delay: 0.6s;
-}
-
-@keyframes loader {
-  0%,
-  100% {
-    transform: scaleY(1);
-    background-color: #77f07f;
-  }
-  50% {
-    transform: scaleY(2);
-    background-color: #3fc995;
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
-}
-
-.animate-pulse {
-  animation: pulse 2s ease-in-out infinite;
-}
+.hide{display:none!important}.loader-container{height:60px;position:relative;width:200px}.loader{display:flex;height:8px;justify-content:space-between;left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);width:100%}.loader-bar{animation:loader 1.5s ease-in-out infinite;background-color:#77f07f;border-radius:3px;height:100%;width:15px}.loader-bar:first-child{animation-delay:0s}.loader-bar:nth-child(2){animation-delay:.15s}.loader-bar:nth-child(3){animation-delay:.3s}.loader-bar:nth-child(4){animation-delay:.45s}.loader-bar:nth-child(5){animation-delay:.6s}@keyframes loader{0%,to{background-color:#77f07f;transform:scaleY(1)}50%{background-color:#3fc995;transform:scaleY(2)}}@keyframes pulse{0%,to{opacity:1}50%{opacity:.6}}.animate-pulse{animation:pulse 2s ease-in-out infinite}
 </style>

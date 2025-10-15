@@ -1,23 +1,21 @@
-<script setup lang="ts">
+<script setup>
 const props = defineProps({
-  searchQuery: { type: String, default: '' },
+  searchQuery: { type: String, default: "" },
   page: { type: Number, default: 1 },
   pageCount: { type: Number, default: 10 },
   totalCount: { type: Number, default: 0 },
-  totalLabel: { type: String, default: '' },
-  searchPlaceholder: { type: String, default: 'Rechercher...' },
-})
-
-const emit = defineEmits(['update:searchQuery', 'update:page', 'update:pageCount'])
-
-function updateSearchQuery(val: string) {
-  emit('update:searchQuery', val)
+  totalLabel: { type: String, default: "" },
+  searchPlaceholder: { type: String, default: "Rechercher..." }
+});
+const emit = defineEmits(["update:searchQuery", "update:page", "update:pageCount"]);
+function updateSearchQuery(val) {
+  emit("update:searchQuery", val);
 }
-function updatePage(val: number) {
-  emit('update:page', val)
+function updatePage(val) {
+  emit("update:page", val);
 }
-function updatePageCount(val: number) {
-  emit('update:pageCount', val)
+function updatePageCount(val) {
+  emit("update:pageCount", val);
 }
 </script>
 

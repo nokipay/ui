@@ -277,3 +277,4 @@ npm run dev
 
 **Toutes les corrections sont appliquées !**  
 **Le projet est prêt pour le développement.**
+

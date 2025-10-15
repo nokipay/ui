@@ -1,12 +1,10 @@
-<script setup lang="ts">
-interface wrapperAttributes {
-  title: string
-  errorsMessage: string | string[]
-  errorMessage: string | string[]
-  loading?: boolean
-}
-
-defineProps<wrapperAttributes>()
+<script setup>
+defineProps({
+  title: { type: String, required: true },
+  errorsMessage: { type: [String, Array], required: true },
+  errorMessage: { type: [String, Array], required: true },
+  loading: { type: Boolean, required: false }
+});
 </script>
 
 <template>
@@ -17,11 +15,8 @@ defineProps<wrapperAttributes>()
         <!-- Zone des erreurs -->
         <div
           v-if="
-            (typeof errorMessage === 'string' && errorMessage.length > 0) ||
-            (typeof errorsMessage === 'string' && errorsMessage.length > 0) ||
-            (typeof errorMessage !== 'string' && errorMessage.length > 0) ||
-            (typeof errorsMessage !== 'string' && errorsMessage.length > 0)
-          "
+  typeof errorMessage === 'string' && errorMessage.length > 0 || typeof errorsMessage === 'string' && errorsMessage.length > 0 || typeof errorMessage !== 'string' && errorMessage.length > 0 || typeof errorsMessage !== 'string' && errorsMessage.length > 0
+"
           class="bg-red-50 border-b border-red-200 px-6 py-4"
         >
           <!-- Message d'erreur simple (string) -->

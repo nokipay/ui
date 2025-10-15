@@ -1,40 +1,32 @@
-<script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { getImageUrl } from '../assets/images'
-
-const isOnline = ref(true)
-const connectionType = ref('')
-
+<script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+import { getImageUrl } from "../assets/images";
+const isOnline = ref(true);
+const connectionType = ref("");
 function checkInternetConnection() {
-  if (typeof navigator !== 'undefined') {
-    isOnline.value = navigator.onLine
+  if (typeof navigator !== "undefined") {
+    isOnline.value = navigator.onLine;
   }
 }
-
 function updateConnectionType() {
-  if (typeof navigator !== 'undefined' && (navigator as any).connection) {
-    connectionType.value = (navigator as any).connection.effectiveType
+  if (typeof navigator !== "undefined" && navigator.connection) {
+    connectionType.value = navigator.connection.effectiveType;
   }
 }
-
 onMounted(() => {
-  // Initialize online status on client side
-  if (typeof navigator !== 'undefined') {
-    isOnline.value = navigator.onLine
-    updateConnectionType()
-
-    // Add event listeners only on client side
-    window.addEventListener('online', checkInternetConnection)
-    window.addEventListener('offline', checkInternetConnection)
+  if (typeof navigator !== "undefined") {
+    isOnline.value = navigator.onLine;
+    updateConnectionType();
+    window.addEventListener("online", checkInternetConnection);
+    window.addEventListener("offline", checkInternetConnection);
   }
-})
-
+});
 onUnmounted(() => {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('online', checkInternetConnection)
-    window.removeEventListener('offline', checkInternetConnection)
+  if (typeof window !== "undefined") {
+    window.removeEventListener("online", checkInternetConnection);
+    window.removeEventListener("offline", checkInternetConnection);
   }
-})
+});
 </script>
 
 <template>

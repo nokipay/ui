@@ -1,14 +1,11 @@
-<script setup lang="ts">
-import { getImageUrl } from '../../assets/images'
-
-interface wrapperAttributes {
-  successMessage?: string
-  errorsMessage: string
-  errorMessage: string
-  title: string
-}
-
-defineProps<wrapperAttributes>()
+<script setup>
+import { getImageUrl } from "../../assets/images";
+defineProps({
+  successMessage: { type: String, required: false },
+  errorsMessage: { type: String, required: true },
+  errorMessage: { type: String, required: true },
+  title: { type: String, required: true }
+});
 </script>
 
 <template>
@@ -56,5 +53,3 @@ defineProps<wrapperAttributes>()
     </div>
   </div>
 </template>
-
-<style lang="css" scoped></style>

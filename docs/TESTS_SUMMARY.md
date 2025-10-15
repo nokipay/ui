@@ -321,3 +321,4 @@ Le projet NxPay UI a maintenant une base solide de tests qui garantit la qualit�
 **Tests :** 93 passants  
 **Couverture :** À améliorer  
 **Qualité :** Excellente
+

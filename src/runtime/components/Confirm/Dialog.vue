@@ -1,67 +1,38 @@
-<script setup lang="ts">
-import { ref, type Ref } from 'vue'
-
-interface PopupAttributes {
-  title: string
-  message: string
-  okButton: string
-  cancelButton: any
-}
-
-const popup: Ref = ref<{
-  open: Function
-  close: Function
-} | null>(null)
-
-const title = ref('')
-
-const message = ref('')
-
-const okButton = ref('')
-
-const cancelButton = ref('Annuler')
-
-const resolvePromise = ref<any>()
-
-const rejectPromise = ref<any>()
-
-const show = (opts: PopupAttributes) => {
-  title.value = opts.title
-
-  message.value = opts.message
-
-  okButton.value = opts.okButton
-
+<script setup>
+import { ref } from "vue";
+const popup = ref(null);
+const title = ref("");
+const message = ref("");
+const okButton = ref("");
+const cancelButton = ref("Annuler");
+const resolvePromise = ref();
+const rejectPromise = ref();
+const show = (opts) => {
+  title.value = opts.title;
+  message.value = opts.message;
+  okButton.value = opts.okButton;
   if (opts.cancelButton) {
-    cancelButton.value = opts.cancelButton
+    cancelButton.value = opts.cancelButton;
   }
-
-  popup.value.open()
-
+  popup.value.open();
   return new Promise((resolve, reject) => {
-    resolvePromise.value = resolve
-
-    rejectPromise.value = reject
-  })
-}
-
+    resolvePromise.value = resolve;
+    rejectPromise.value = reject;
+  });
+};
 const _confirm = () => {
-  popup.value.close()
-
-  resolvePromise.value(true)
-}
-
+  popup.value.close();
+  resolvePromise.value(true);
+};
 const _cancel = () => {
-  popup.value.close()
-
-  rejectPromise.value(false)
-}
-
+  popup.value.close();
+  rejectPromise.value(false);
+};
 defineExpose({
   show,
   _confirm,
-  _cancel,
-})
+  _cancel
+});
 </script>
 
 <template>

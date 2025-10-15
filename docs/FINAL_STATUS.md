@@ -175,3 +175,4 @@ Tous les objectifs sont atteints :
 **Version :** 2.0.0  
 **Qualité :** Production Ready  
 **Tests :** 93/93 (100%)
+

@@ -1,63 +1,23 @@
-<script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
-
-// const appStore = useAppStore()
-
-// const toast = useToast()
-
-const timer = ref(0)
-
-const counter = ref(0)
-
-const current_load = ref('Début du chargement')
-
-function update(value: string) {
-  timer.value += 6.67
-
-  counter.value++
-
-  current_load.value = `Chargement des ${value}`
+<script setup>
+import { ref, onMounted, watch } from "vue";
+const timer = ref(0);
+const counter = ref(0);
+const current_load = ref("D\xE9but du chargement");
+function update(value) {
+  timer.value += 6.67;
+  counter.value++;
+  current_load.value = `Chargement des ${value}`;
 }
-
 async function init() {
-  // if (!appStore.initData) {
-  //     const stores = [
-  //         // { store: useTypeFeesStore(), label: 'Type de frais' },
-  //     ];
-  //     for (const { store, label } of stores) {
-  //         try {
-  //             await store.findAll();
-  //             update(label);
-  //         } catch (error: any) {
-  //             if (error.response?.status === 403) {
-  //                 update(label);
-  //             }
-  //         }
-  //     }
-  //     // try {
-  //     //     await useRoleStore().all();
-  //     //     update('Rôles');
-  //     // } catch (error: any) {
-  //     //     if (error.response?.status === 403) {
-  //     //         update('Rôles');
-  //     //     }
-  //     // }
-  // }
 }
-
 onMounted(() => {
-  init()
-})
-
+  init();
+});
 watch(timer, () => {
   if (timer.value > 100) {
-    // appStore.initData = true
-
-    // toast.add({ title: 'Chargement des données effectués avec succès', icon: "i-heroicons-check-circle" })
-
-    timer.value = 0
+    timer.value = 0;
   }
-})
+});
 </script>
 
 <template>

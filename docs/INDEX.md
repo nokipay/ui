@@ -163,3 +163,4 @@ docs/
 **Documentation maintenue par l'équipe NxPay**  
 **Version :** 2.0.0  
 **Octobre 2025**
+

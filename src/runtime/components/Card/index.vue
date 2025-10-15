@@ -1,54 +1,39 @@
-<script setup lang="ts">
-import { computed } from 'vue'
-import { useCurrencyFormat } from '../../composables/useCurrencyFormat'
-
-interface CardProps {
-  title: string
-  number: number
-  icon: string
-  currency?: 'FCFA' | 'USD' | 'EUR'
-  showCompact?: boolean
-  compactThreshold?: number
-  accentColor?: 'primary' | 'success' | 'warning' | 'danger'
-}
-
-const props = withDefaults(defineProps<CardProps>(), {
-  currency: 'FCFA',
-  showCompact: true,
-  compactThreshold: 12345678,
-  accentColor: 'primary',
-})
-
-const { formatNumber } = useCurrencyFormat()
-
+<script setup>
+import { computed } from "vue";
+import { useCurrencyFormat } from "../../composables/useCurrencyFormat";
+const props = defineProps({
+  title: { type: String, required: true },
+  number: { type: Number, required: true },
+  icon: { type: String, required: true },
+  currency: { type: String, required: false, default: "FCFA" },
+  showCompact: { type: Boolean, required: false, default: true },
+  compactThreshold: { type: Number, required: false, default: 12345678 },
+  accentColor: { type: String, required: false, default: "primary" }
+});
+const { formatNumber } = useCurrencyFormat();
 const shouldShowCompact = computed(() => {
-  return props.showCompact && props.number >= props.compactThreshold
-})
-
+  return props.showCompact && props.number >= props.compactThreshold;
+});
 const formattedNumber = computed(() => {
-  const suffix = props.currency === 'FCFA' ? ' FCFA' : ` ${props.currency}`
-
+  const suffix = props.currency === "FCFA" ? " FCFA" : ` ${props.currency}`;
   if (shouldShowCompact.value) {
-    return formatNumber(props.number, { compact: true }) + suffix
+    return formatNumber(props.number, { compact: true }) + suffix;
   }
-
-  return formatNumber(props.number) + suffix
-})
-
+  return formatNumber(props.number) + suffix;
+});
 const exactAmount = computed(() => {
-  const suffix = props.currency === 'FCFA' ? ' XAF' : ` ${props.currency}`
-  return formatNumber(props.number) + suffix
-})
-
+  const suffix = props.currency === "FCFA" ? " XAF" : ` ${props.currency}`;
+  return formatNumber(props.number) + suffix;
+});
 const accentColorClass = computed(() => {
   const colors = {
-    primary: 'bg-primary/5',
-    success: 'bg-green-500/5',
-    warning: 'bg-yellow-500/5',
-    danger: 'bg-red-500/5',
-  }
-  return colors[props.accentColor]
-})
+    primary: "bg-primary/5",
+    success: "bg-green-500/5",
+    warning: "bg-yellow-500/5",
+    danger: "bg-red-500/5"
+  };
+  return colors[props.accentColor];
+});
 </script>
 
 <template>
@@ -82,5 +67,3 @@ const accentColorClass = computed(() => {
     </div>
   </div>
 </template>
-
-<style lang="css" scoped></style>
