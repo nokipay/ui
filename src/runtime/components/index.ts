@@ -87,3 +87,14 @@ export { default as Tooltip } from './Tooltip/Tooltip.vue'
 // Avatar components
 export { default as Avatar } from './Avatar/Avatar.vue'
 export { default as AvatarGroup } from './Avatar/AvatarGroup.vue'
+
+// Form components (Phase 3)
+export { default as FormTextarea } from './Form/FormTextarea.vue'
+export { default as FormSelect } from './Form/FormSelect.vue'
+export { default as FormCheckbox } from './Form/FormCheckbox.vue'
+export { default as FormRadio } from './Form/FormRadio.vue'
+export { default as FormSwitch } from './Form/FormSwitch.vue'
+
+// Table components (Phase 3)
+export { default as TablePagination } from './Table/TablePagination.vue'
+export { default as TableSearch } from './Table/TableSearch.vue'

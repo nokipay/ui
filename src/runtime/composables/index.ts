@@ -39,3 +39,11 @@ export type { Toast, ToastOptions } from './useToast'
 
 // Utilities - Debounce
 export { useDebounce, useDebounceFn } from './useDebounce'
+
+// Table - Pagination
+export { usePagination } from './usePagination'
+export type { PaginationOptions } from './usePagination'
+
+// Table - Sort
+export { useTableSort } from './useTableSort'
+export type { SortDirection, SortState } from './useTableSort'
