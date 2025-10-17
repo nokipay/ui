@@ -98,3 +98,11 @@ export { default as FormSwitch } from './Form/FormSwitch.vue'
 // Table components (Phase 3)
 export { default as TablePagination } from './Table/TablePagination.vue'
 export { default as TableSearch } from './Table/TableSearch.vue'
+
+// Polish components (Phase 4)
+export { default as Badge } from './Badge/Badge.vue'
+export { default as Divider } from './Divider/Divider.vue'
+export { default as ProgressBar } from './Progress/ProgressBar.vue'
+export { default as Breadcrumb } from './Breadcrumb/Breadcrumb.vue'
+export { default as Chip } from './Chip/Chip.vue'
+export { default as Stepper } from './Stepper/Stepper.vue'
