@@ -45,3 +45,8 @@ export { default as LanguageSwitch } from './Language/Switch.vue'
 export { default as InitData } from './InitData.vue'
 export { default as NetworkStatus } from './NetworkStatus.vue'
 export { default as Preloader } from './Preloader.vue'
+
+// Fintech components
+export { default as AmountDisplay } from './Fintech/AmountDisplay.vue'
+export { default as FormCurrencyInput } from './Form/FormCurrencyInput.vue'
+export { default as FormGroup } from './Form/FormGroup.vue'

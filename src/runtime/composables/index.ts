@@ -20,3 +20,11 @@ export type { Language, LanguageConfig } from './useLanguage'
 // Status & Badges
 export { useStatusBadge } from './useStatusBadge'
 export type { BadgeConfig } from './useStatusBadge'
+
+// Fintech - Amount Validation
+export { useAmountValidation, validateAmountQuick } from './useAmountValidation'
+export type { ValidationOptions, ValidationResult } from './useAmountValidation'
+
+// Fintech - Fee Calculation
+export { useFeeCalculation, calculateQuickFee } from './useFeeCalculation'
+export type { FeeBreakdown, FeeCalculationResult } from './useFeeCalculation'
