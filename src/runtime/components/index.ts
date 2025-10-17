@@ -48,5 +48,8 @@ export { default as Preloader } from './Preloader.vue'
 
 // Fintech components
 export { default as AmountDisplay } from './Fintech/AmountDisplay.vue'
+export { default as TransactionStatus } from './Fintech/TransactionStatus.vue'
+export { default as WalletBalance } from './Fintech/WalletBalance.vue'
+export { default as CurrencyBadge } from './Fintech/CurrencyBadge.vue'
 export { default as FormCurrencyInput } from './Form/FormCurrencyInput.vue'
 export { default as FormGroup } from './Form/FormGroup.vue'
