@@ -28,3 +28,14 @@ export type { ValidationOptions, ValidationResult } from './useAmountValidation'
 // Fintech - Fee Calculation
 export { useFeeCalculation, calculateQuickFee } from './useFeeCalculation'
 export type { FeeBreakdown, FeeCalculationResult } from './useFeeCalculation'
+
+// UI Interactions - Modal
+export { useModal } from './useModal'
+export type { ModalOptions } from './useModal'
+
+// UI Interactions - Toast
+export { useToast } from './useToast'
+export type { Toast, ToastOptions } from './useToast'
+
+// Utilities - Debounce
+export { useDebounce, useDebounceFn } from './useDebounce'
