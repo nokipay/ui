@@ -71,3 +71,19 @@ export { default as ModalDrawer } from './Modal/ModalDrawer.vue'
 
 // Alert components
 export { default as Alert } from './Alert/Alert.vue'
+export { default as AlertDialog } from './Alert/AlertDialog.vue'
+export { default as AlertBanner } from './Alert/AlertBanner.vue'
+
+// Dropdown components
+export { default as Dropdown } from './Dropdown/Dropdown.vue'
+
+// Tabs components
+export { default as Tabs } from './Tabs/Tabs.vue'
+export { default as TabPanel } from './Tabs/TabPanel.vue'
+
+// Tooltip components
+export { default as Tooltip } from './Tooltip/Tooltip.vue'
+
+// Avatar components
+export { default as Avatar } from './Avatar/Avatar.vue'
+export { default as AvatarGroup } from './Avatar/AvatarGroup.vue'
