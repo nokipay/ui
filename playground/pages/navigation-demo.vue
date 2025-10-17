@@ -60,25 +60,36 @@ const menuLinks: SidebarLink[] = [
     <!-- Démo Layout Dashboard -->
     <div class="mb-12">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Layout Dashboard Complet</h2>
-      <p class="text-gray-600 mb-6">Exemple de layout complet avec Sidebar + Navbar + Navigation</p>
+      <p class="text-gray-600 mb-6">
+        Exemple de layout complet avec Sidebar + Navbar + Navigation.
+        <strong
+          >Cette démo montre un vrai dashboard avec sidebar fixe, navbar responsive et contenu
+          scrollable.</strong
+        >
+      </p>
 
       <!-- Wrapper avec hauteur fixe pour la démo -->
-      <div class="border-4 border-gray-300 rounded-lg overflow-hidden" style="height: 600px">
-        <div class="flex h-full bg-gray-50">
+      <div
+        class="border-4 border-gray-300 rounded-lg overflow-hidden bg-gray-50"
+        style="height: 700px"
+      >
+        <div class="flex h-full">
           <!-- Sidebar Desktop -->
-          <NavigationSidebar logo="/logo.png" app-name="NxPay" :links="menuLinks">
-            <template #footer>
-              <div class="px-4 py-3 border-t border-gray-800">
-                <UButton
-                  icon="i-heroicons-arrow-right-on-rectangle"
-                  label="Déconnexion"
-                  color="red"
-                  variant="soft"
-                  block
-                />
-              </div>
-            </template>
-          </NavigationSidebar>
+          <div class="w-64 flex-shrink-0">
+            <NavigationSidebar logo="/logo.png" app-name="NxPay" :links="menuLinks">
+              <template #footer>
+                <div class="px-4 py-3 border-t border-gray-800">
+                  <UButton
+                    icon="i-heroicons-arrow-right-on-rectangle"
+                    label="Déconnexion"
+                    color="red"
+                    variant="soft"
+                    block
+                  />
+                </div>
+              </template>
+            </NavigationSidebar>
+          </div>
 
           <!-- Mobile Sidebar -->
           <NavigationSidebarMobile
@@ -89,31 +100,37 @@ const menuLinks: SidebarLink[] = [
           />
 
           <!-- Main Content -->
-          <div class="flex-1 overflow-y-auto">
-            <div class="p-6">
-              <!-- Navbar -->
-              <NavigationNavbar
-                title="Dashboard"
-                subtitle="Vue d'ensemble de votre activité"
-                @toggle-mobile-menu="mobileMenuOpen = !mobileMenuOpen"
-              >
-                <template #actions>
+          <div class="flex-1 flex flex-col overflow-hidden bg-white">
+            <!-- Navbar -->
+            <NavigationNavbar
+              title="Dashboard"
+              subtitle="Vue d'ensemble de votre activité"
+              @toggle-mobile-menu="mobileMenuOpen = !mobileMenuOpen"
+            >
+              <template #actions>
+                <div class="relative">
                   <UButton
                     icon="i-heroicons-bell"
                     color="white"
                     variant="solid"
                     class="rounded-full"
-                  >
-                    <UBadge color="red" variant="solid" size="xs" class="absolute -top-1 -right-1">
-                      3
-                    </UBadge>
-                  </UButton>
-                  <UButton icon="i-heroicons-user-circle" color="gray" variant="ghost" />
-                </template>
-              </NavigationNavbar>
+                  />
+                  <UBadge
+                    color="red"
+                    variant="solid"
+                    size="xs"
+                    class="absolute -top-1 -right-1"
+                    label="3"
+                  />
+                </div>
+                <UButton icon="i-heroicons-user-circle" color="gray" variant="ghost" />
+              </template>
+            </NavigationNavbar>
 
+            <!-- Content Scrollable -->
+            <div class="flex-1 overflow-y-auto p-6">
               <!-- Content Démo -->
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <Card title="Solde Total" :number="5678900" icon="heroicons:banknotes" />
                 <Card
                   title="Revenus"
@@ -135,7 +152,7 @@ const menuLinks: SidebarLink[] = [
               </div>
 
               <!-- Tables démo -->
-              <div class="mt-8">
+              <div>
                 <TableWrapper
                   title="Dernières Transactions"
                   description="Liste des transactions récentes"
@@ -195,7 +212,7 @@ const menuLinks: SidebarLink[] = [
         <h2 class="text-2xl font-bold text-gray-800 mb-4">NavigationLink</h2>
         <p class="text-gray-600 mb-6">Liens de navigation avec support accordéon</p>
 
-        <div class="bg-gray-900 p-6 rounded-lg max-w-xs">
+        <div class="bg-gray-900 p-6 rounded-lg max-w-xs border border-gray-700">
           <div class="space-y-2">
             <NavigationLink icon="heroicons:home" title="Dashboard" link="/navigation-demo" />
             <NavigationLink
@@ -209,6 +226,13 @@ const menuLinks: SidebarLink[] = [
             <NavigationLink icon="heroicons:cog-6-tooth" title="Paramètres" link="/settings" />
           </div>
         </div>
+
+        <p class="text-sm text-gray-500 mt-2">
+          ✅ Support accordéon pour les sous-menus<br />
+          ✅ Icônes Heroicons<br />
+          ✅ Active state automatique<br />
+          ✅ Dark theme intégré
+        </p>
       </div>
 
       <!-- NavigationNavbar -->
@@ -216,7 +240,7 @@ const menuLinks: SidebarLink[] = [
         <h2 class="text-2xl font-bold text-gray-800 mb-4">NavigationNavbar</h2>
         <p class="text-gray-600 mb-6">Barre de navigation responsive</p>
 
-        <div class="bg-white p-6 rounded-lg border border-gray-200">
+        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
           <NavigationNavbar
             title="Page d'Exemple"
             subtitle="Sous-titre de la page"
@@ -228,6 +252,51 @@ const menuLinks: SidebarLink[] = [
             </template>
           </NavigationNavbar>
         </div>
+
+        <p class="text-sm text-gray-500 mt-2">
+          ✅ Responsive avec menu mobile<br />
+          ✅ Actions customisables<br />
+          ✅ Breadcrumb automatique<br />
+          ✅ Toggle mobile menu intégré
+        </p>
+      </div>
+
+      <!-- NavigationSidebarMobile -->
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">NavigationSidebarMobile</h2>
+        <p class="text-gray-600 mb-6">
+          Sidebar mobile (slideover) avec même contenu que la sidebar desktop
+        </p>
+
+        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+          <p class="text-sm text-gray-600 mb-4">
+            💡 <strong>Testez le mobile sidebar :</strong> Cliquez sur le bouton hamburger dans la
+            navbar ci-dessus
+          </p>
+
+          <div class="flex gap-4">
+            <UButton
+              @click="mobileMenuOpen = true"
+              icon="i-heroicons-bars-3"
+              label="Ouvrir Mobile Sidebar"
+              color="primary"
+            />
+            <UButton
+              @click="mobileMenuOpen = false"
+              icon="i-heroicons-x-mark"
+              label="Fermer"
+              color="gray"
+              variant="outline"
+            />
+          </div>
+        </div>
+
+        <p class="text-sm text-gray-500 mt-2">
+          ✅ Slideover animation<br />
+          ✅ Même contenu que sidebar desktop<br />
+          ✅ Overlay avec fermeture<br />
+          ✅ Responsive automatique
+        </p>
       </div>
 
       <!-- Code Examples -->

@@ -41,6 +41,18 @@
               Navigation
             </NuxtLink>
             <NuxtLink
+              to="/table-layout-demo"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
+              Tables
+            </NuxtLink>
+            <NuxtLink
+              to="/transactions-demo"
+              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
+            >
+              Transactions
+            </NuxtLink>
+            <NuxtLink
               to="/gradients"
               class="text-gray-600 hover:text-nxGreen-500 transition-colors"
             >

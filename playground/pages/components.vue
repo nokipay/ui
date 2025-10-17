@@ -10,19 +10,60 @@
       class="bg-gradient-to-r from-nxGreen-50 to-nxTeal-50 p-6 rounded-xl border border-nxGreen-100"
     >
       <h3 class="text-lg font-semibold text-gray-900 mb-3">Navigation Rapide</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <a href="#buttons" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Buttons</a>
-        <a href="#badges" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Badges</a>
-        <a href="#cards" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Cards</a>
-        <a href="#forms" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Forms</a>
-        <a href="#tables" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Tables</a>
-        <a href="#modals" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Modals</a>
-        <a href="#utility" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Utility</a>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
         <a href="#navigation" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium"
           >→ Navigation</a
         >
+        <a href="#tables" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Tables</a>
+        <a href="#buttons" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Buttons</a>
+        <a href="#forms" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Forms</a>
+        <a href="#cards" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Cards</a>
+        <a href="#badges" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Badges</a>
+        <a href="#language" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium"
+          >→ Language</a
+        >
+        <a href="#modals" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Modals</a>
+        <a href="#utility" class="text-nxGreen-600 hover:text-nxGreen-700 font-medium">→ Utility</a>
       </div>
     </div>
+
+    <!-- Navigation -->
+    <section id="navigation" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-bold text-gray-900">Navigation Components</h3>
+        <NuxtLink to="/navigation-demo" class="text-sm text-nxGreen-600 hover:text-nxGreen-700">
+          Voir démo complète →
+        </NuxtLink>
+      </div>
+      <div class="space-y-4">
+        <p class="text-gray-600">
+          Composants de navigation pour dashboards professionnels (Sidebar, Navbar, Links)
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">NavigationSidebar</h4>
+            <p class="text-sm text-gray-600">Sidebar fixe avec logo, liens et footer</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">NavigationNavbar</h4>
+            <p class="text-sm text-gray-600">Barre navigation responsive avec actions</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">NavigationLink</h4>
+            <p class="text-sm text-gray-600">Lien sidebar avec accordéon children</p>
+          </div>
+          <div class="p-4 bg-gray-50 rounded-lg">
+            <h4 class="font-semibold text-gray-800 mb-2">NavigationSidebarMobile</h4>
+            <p class="text-sm text-gray-600">Sidebar mobile (slideover)</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 p-3 bg-gray-50 rounded-lg">
+        <code class="text-xs text-gray-700">
+          import { NavigationSidebar, NavigationNavbar, NavigationLink } from '@nxpay/ui'
+        </code>
+      </div>
+    </section>
 
     <!-- Buttons -->
     <section id="buttons" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
@@ -368,12 +409,35 @@
           </ul>
         </div>
         <div>
+          <h4 class="font-semibold text-gray-900 mb-2">Navigation</h4>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li>• NavigationSidebar</li>
+            <li>• NavigationNavbar</li>
+            <li>• NavigationLink</li>
+            <li>• NavigationSidebarMobile</li>
+          </ul>
+        </div>
+        <div>
           <h4 class="font-semibold text-gray-900 mb-2">Tables</h4>
           <ul class="text-sm text-gray-700 space-y-1">
+            <li class="text-nxGreen-600 font-semibold">• TableLayout (NOUVEAU)</li>
             <li>• TableWrapper</li>
             <li>• ElementByPage</li>
             <li>• PaginationInfo</li>
-            <li>• Table (base)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">Transactions</h4>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li class="text-nxGreen-600 font-semibold">• TransactionListItem (NOUVEAU)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-gray-900 mb-2">Language</h4>
+          <ul class="text-sm text-gray-700 space-y-1">
+            <li class="text-nxGreen-600 font-semibold">• LanguageSwitch (NOUVEAU)</li>
+            <li>• useLanguage composable</li>
+            <li>• useStatusBadge composable</li>
           </ul>
         </div>
         <div>
@@ -386,6 +450,7 @@
         <div>
           <h4 class="font-semibold text-gray-900 mb-2">Utility</h4>
           <ul class="text-sm text-gray-700 space-y-1">
+            <li class="text-nxGreen-600 font-semibold">• ButtonRefresh (NOUVEAU)</li>
             <li>• Preloader</li>
             <li>• NetworkStatus</li>
             <li>• InitData</li>
@@ -395,7 +460,11 @@
       </div>
       <div class="mt-6 text-center">
         <p class="text-sm text-gray-600">
-          Total : <span class="font-bold text-nxGreen-600">20+ composants</span> disponibles
+          Total : <span class="font-bold text-nxGreen-600">28 composants</span> disponibles (+40% vs
+          v1.0)
+        </p>
+        <p class="text-xs text-gray-500 mt-2">
+          13 nouveaux composants ajoutés (inspiré design mobile)
         </p>
       </div>
     </section>
