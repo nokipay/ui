@@ -57,7 +57,7 @@ const typeConfig = computed(() => {
 </script>
 
 <template>
-  <UModal v-model="open" :prevent-close="false">
+  <UModal :model-value="open" @update:model-value="(val) => emit('update:open', val)" :prevent-close="false">
     <UCard>
       <div class="flex gap-4">
         <div 

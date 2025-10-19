@@ -8,61 +8,46 @@
             <div class="w-10 h-10 gradient-nxpay rounded-lg"></div>
             <div>
               <h1 class="text-2xl font-bold text-gray-900">NxPay UI</h1>
-              <p class="text-sm text-gray-500">Component Playground v2.0</p>
+              <p class="text-sm text-gray-500">Component Playground v3.0 ✨</p>
             </div>
           </div>
 
-          <nav class="flex gap-4">
-            <NuxtLink to="/" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
+          <nav class="flex gap-4 overflow-x-auto">
+            <NuxtLink to="/" class="text-gray-600 hover:text-nxGreen-500 transition-colors whitespace-nowrap">
               Home
             </NuxtLink>
-            <NuxtLink
-              to="/components"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              Components
+            
+            <!-- V3 Components -->
+            <span class="text-gray-400">|</span>
+            <NuxtLink to="/fintech-v3" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+              Fintech V3
             </NuxtLink>
-            <NuxtLink to="/buttons" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
-              Buttons
+            <NuxtLink to="/loading-empty" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+              Loading
             </NuxtLink>
-            <NuxtLink to="/forms" class="text-gray-600 hover:text-nxGreen-500 transition-colors">
-              Forms
+            <NuxtLink to="/modals-alerts" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+              Modals
             </NuxtLink>
-            <NuxtLink
-              to="/form-wrapper-demo"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              FormWrapper
+            <NuxtLink to="/ui-components" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+              UI
             </NuxtLink>
-            <NuxtLink
-              to="/navigation-demo"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              Navigation
+            <NuxtLink to="/forms-v3" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+              Forms V3
             </NuxtLink>
-            <NuxtLink
-              to="/table-layout-demo"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              Tables
+            <NuxtLink to="/tables-v3" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+              Tables V3
             </NuxtLink>
-            <NuxtLink
-              to="/transactions-demo"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              Transactions
-            </NuxtLink>
-            <NuxtLink
-              to="/gradients"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              Gradients
-            </NuxtLink>
-            <NuxtLink
-              to="/design-tokens"
-              class="text-gray-600 hover:text-nxGreen-500 transition-colors"
-            >
-              Tokens
+      <NuxtLink to="/polish" class="text-nxGreen-600 hover:text-nxGreen-700 font-semibold transition-colors whitespace-nowrap">
+        Polish
+      </NuxtLink>
+      <NuxtLink to="/simple-test" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors whitespace-nowrap">
+        Test
+      </NuxtLink>
+            
+            <!-- V2 Components -->
+            <span class="text-gray-400">|</span>
+            <NuxtLink to="/components" class="text-gray-500 hover:text-gray-700 transition-colors whitespace-nowrap text-sm">
+              Old
             </NuxtLink>
           </nav>
         </div>

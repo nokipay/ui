@@ -57,7 +57,6 @@ export { default as FormGroup } from './Form/FormGroup.vue'
 // Loading components
 export { default as Spinner } from './Loading/Spinner.vue'
 export { default as Skeleton } from './Loading/Skeleton.vue'
-export { default as ProgressBar } from './Loading/ProgressBar.vue'
 
 // Empty components
 export { default as EmptyState } from './Empty/EmptyState.vue'

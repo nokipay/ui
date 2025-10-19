@@ -70,7 +70,8 @@ const typeConfig = computed(() => {
 
 <template>
   <UModal 
-    v-model="open"
+    :model-value="open"
+    @update:model-value="(val) => emit('update:open', val)"
     :prevent-close="loading"
   >
     <UCard>

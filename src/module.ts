@@ -23,7 +23,7 @@ export default defineNuxtModule<ModuleOptions>({
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
       pathPrefix: true,
-      prefix: 'Noki',
+      prefix: '',
       global: true,
     })
 
